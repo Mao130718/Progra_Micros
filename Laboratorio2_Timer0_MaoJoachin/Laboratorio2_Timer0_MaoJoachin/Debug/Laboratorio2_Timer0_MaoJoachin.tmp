@@ -1,0 +1,51 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\Debug\Laboratorio2_Timer0_MaoJoachin.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Laboratorio2_Timer0_MaoJoachin.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Laboratorio2_Timer0_MaoJoachin.map</FILE>
+  <FILE>Laboratorio2_Timer0_MaoJoachin.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <SETUP><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>46</LINE></SETUP>
+  <table7seg><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>38</LINE></table7seg>
+  <UPDATE_DISPLAY><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>276</LINE></UPDATE_DISPLAY>
+  <UPDATE_LEDS><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>318</LINE></UPDATE_LEDS>
+  <UPDATE_LED_INDICATOR><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>265</LINE></UPDATE_LED_INDICATOR>
+  <MAIN_LOOP><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>105</LINE></MAIN_LOOP>
+  <CHECK_BUTTONS><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>149</LINE></CHECK_BUTTONS>
+  <UPDATE_SEG_DISPLAY><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>136</LINE></UPDATE_SEG_DISPLAY>
+  <TOGGLE_LED><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>258</LINE></TOGGLE_LED>
+  <CHECK_B1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>152</LINE></CHECK_B1>
+  <B1_CHANGED><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>168</LINE></B1_CHANGED>
+  <B1_DELAY><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>189</LINE></B1_DELAY>
+  <PROCESS_B1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>238</LINE></PROCESS_B1>
+  <DELAY_1MS><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>328</LINE></DELAY_1MS>
+  <CHECK_B2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>193</LINE></CHECK_B2>
+  <B2_CHANGED><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>209</LINE></B2_CHANGED>
+  <B2_DELAY><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>230</LINE></B2_DELAY>
+  <PROCESS_B2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>248</LINE></PROCESS_B2>
+  <B1_UPDATE><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>243</LINE></B1_UPDATE>
+  <B2_UPDATE><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>253</LINE></B2_UPDATE>
+  <TOGGLE_LED_ON><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>263</LINE></TOGGLE_LED_ON>
+  <LED_OFF><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>271</LINE></LED_OFF>
+  <DELAY_1MS_OUTER><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>332</LINE></DELAY_1MS_OUTER>
+  <DELAY_1MS_INNER><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Laboratorio2_Timer0_MaoJoachin\Laboratorio2_Timer0_MaoJoachin\main.asm</FILE><LINE>334</LINE></DELAY_1MS_INNER>
+ </LABELS>
+</ASSEMBLER_INFO>

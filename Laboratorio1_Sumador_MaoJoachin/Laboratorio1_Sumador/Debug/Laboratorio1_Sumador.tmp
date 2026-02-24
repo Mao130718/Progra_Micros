@@ -1,0 +1,68 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\Debug\Laboratorio1_Sumador.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Laboratorio1_Sumador.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Laboratorio1_Sumador.map</FILE>
+  <FILE>Laboratorio1_Sumador.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <SETUP><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>75</LINE></SETUP>
+  <MAIN_LOOP><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>152</LINE></MAIN_LOOP>
+  <CHECK_INC1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>160</LINE></CHECK_INC1>
+  <CHECK_DEC1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>197</LINE></CHECK_DEC1>
+  <DELAY_INC1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>162</LINE></DELAY_INC1>
+  <EXEC_INC1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>169</LINE></EXEC_INC1>
+  <EXEC_INC1_CONTINUAR><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>175</LINE></EXEC_INC1_CONTINUAR>
+  <UPDATE_LED1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>187</LINE></UPDATE_LED1>
+  <CHECK_DEC1_PRESSED><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>204</LINE></CHECK_DEC1_PRESSED>
+  <CHECK_INC2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>241</LINE></CHECK_INC2>
+  <DELAY_DEC1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>206</LINE></DELAY_DEC1>
+  <EXEC_DEC1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>214</LINE></EXEC_DEC1>
+  <EXEC_DEC1_CONTINUAR><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>220</LINE></EXEC_DEC1_CONTINUAR>
+  <UPDATE_LED1_DEC><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>231</LINE></UPDATE_LED1_DEC>
+  <CHECK_INC2_PRESSED><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>248</LINE></CHECK_INC2_PRESSED>
+  <CHECK_DEC2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>283</LINE></CHECK_DEC2>
+  <DELAY_INC2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>250</LINE></DELAY_INC2>
+  <EXEC_INC2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>258</LINE></EXEC_INC2>
+  <EXEC_INC2_CONTINUAR><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>263</LINE></EXEC_INC2_CONTINUAR>
+  <UPDATE_LED2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>274</LINE></UPDATE_LED2>
+  <CHECK_DEC2_PRESSED><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>290</LINE></CHECK_DEC2_PRESSED>
+  <CHECK_SUMA_BTN><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>327</LINE></CHECK_SUMA_BTN>
+  <DELAY_DEC2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>293</LINE></DELAY_DEC2>
+  <EXEC_DEC2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>301</LINE></EXEC_DEC2>
+  <EXEC_DEC2_CONTINUAR><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>307</LINE></EXEC_DEC2_CONTINUAR>
+  <UPDATE_LED2_DEC><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>318</LINE></UPDATE_LED2_DEC>
+  <CHECK_SUMA_PRESSED><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>334</LINE></CHECK_SUMA_PRESSED>
+  <DELAY_SUMA><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>337</LINE></DELAY_SUMA>
+  <EXEC_SUMA><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>345</LINE></EXEC_SUMA>
+  <EXEC_SUMA_CONTINUAR><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>350</LINE></EXEC_SUMA_CONTINUAR>
+  <NO_OVERFLOW><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>369</LINE></NO_OVERFLOW>
+  <MOSTRAR_RESULTADO><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>373</LINE></MOSTRAR_RESULTADO>
+  <SET_BIT0><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>379</LINE></SET_BIT0>
+  <CHECK_BIT1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>383</LINE></CHECK_BIT1>
+  <SET_BIT1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>389</LINE></SET_BIT1>
+  <CHECK_BIT2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>393</LINE></CHECK_BIT2>
+  <SET_BIT2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>399</LINE></SET_BIT2>
+  <CHECK_BIT3><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>403</LINE></CHECK_BIT3>
+  <SET_BIT3><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>409</LINE></SET_BIT3>
+  <UPDATE_OVERFLOW><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>413</LINE></UPDATE_OVERFLOW>
+  <SET_OVERFLOW><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Atmel Studio\7.0\Progra_Micros\Laboratorio1_Sumador_MaoJoachin\Laboratorio1_Sumador\main.asm</FILE><LINE>420</LINE></SET_OVERFLOW>
+ </LABELS>
+</ASSEMBLER_INFO>
