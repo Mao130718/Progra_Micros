@@ -1,0 +1,49 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\Debug\Laboratorio3_Interrupciones_MaoJoachin.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Laboratorio3_Interrupciones_MaoJoachin.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Laboratorio3_Interrupciones_MaoJoachin.map</FILE>
+  <FILE>Laboratorio3_Interrupciones_MaoJoachin.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <setup><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>32</LINE></setup>
+  <ISR_TMR0><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>189</LINE></ISR_TMR0>
+  <TABLA_7SEG><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>27</LINE></TABLA_7SEG>
+  <main_loop><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>68</LINE></main_loop>
+  <leer_botones><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>138</LINE></leer_botones>
+  <logica_60s><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>169</LINE></logica_60s>
+  <refrescar_dis><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>85</LINE></refrescar_dis>
+  <obtener_hex><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>128</LINE></obtener_hex>
+  <enviar_a_pines><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>106</LINE></enviar_a_pines>
+  <delay_5ms><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>206</LINE></delay_5ms>
+  <check_dec><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>151</LINE></check_dec>
+  <delay_20ms><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>211</LINE></delay_20ms>
+  <wait_rel_inc><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>145</LINE></wait_rel_inc>
+  <dec_normal><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>161</LINE></dec_normal>
+  <wait_rel_dec><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>163</LINE></wait_rel_dec>
+  <check_underflow><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>174</LINE></check_underflow>
+  <check_max_60><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>179</LINE></check_max_60>
+  <fin_logica><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>184</LINE></fin_logica>
+  <fin_isr><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>200</LINE></fin_isr>
+  <D5_1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>208</LINE></D5_1>
+  <D5_2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>209</LINE></D5_2>
+  <D20_1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>213</LINE></D20_1>
+  <D20_2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Laboratorio3_Interrupciones_MaoJoachin\Laboratorio3_Interrupciones_MaoJoachin\main.asm</FILE><LINE>214</LINE></D20_2>
+ </LABELS>
+</ASSEMBLER_INFO>
