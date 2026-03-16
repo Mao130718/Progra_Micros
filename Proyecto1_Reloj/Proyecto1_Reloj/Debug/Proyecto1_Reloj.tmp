@@ -1,0 +1,133 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\Debug\Proyecto1_Reloj.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Proyecto1_Reloj.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Proyecto1_Reloj.map</FILE>
+  <FILE>Proyecto1_Reloj.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <segundos><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>25</LINE></segundos>
+  <minutos><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>26</LINE></minutos>
+  <horas><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>27</LINE></horas>
+  <dia><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>28</LINE></dia>
+  <mes><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>29</LINE></mes>
+  <alarma_horas><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>30</LINE></alarma_horas>
+  <alarma_minutos><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>31</LINE></alarma_minutos>
+  <alarma_activa><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>32</LINE></alarma_activa>
+  <cont_ms><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>33</LINE></cont_ms>
+  <cont_ms2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>34</LINE></cont_ms2>
+  <digito0><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>35</LINE></digito0>
+  <digito1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>36</LINE></digito1>
+  <digito2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>37</LINE></digito2>
+  <digito3><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>38</LINE></digito3>
+  <Setup><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>61</LINE></Setup>
+  <PCI1_ISR><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>432</LINE></PCI1_ISR>
+  <TIM1_COMPA_ISR><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>216</LINE></TIM1_COMPA_ISR>
+  <TIM0_COMPA_ISR><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>248</LINE></TIM0_COMPA_ISR>
+  <Tabla7Seg><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>56</LINE></Tabla7Seg>
+  <MainLoop><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>151</LINE></MainLoop>
+  <Actualizar_Digitos><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>158</LINE></Actualizar_Digitos>
+  <Mostrar_Fecha><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>178</LINE></Mostrar_Fecha>
+  <Mostrar_Alarma><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>189</LINE></Mostrar_Alarma>
+  <Mostrar_Hora><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>167</LINE></Mostrar_Hora>
+  <Separar_Digitos><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>201</LINE></Separar_Digitos>
+  <Sep_Loop><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>203</LINE></Sep_Loop>
+  <Sep_Fin><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>209</LINE></Sep_Fin>
+  <Salir_T1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>239</LINE></Salir_T1>
+  <Guardar_Seg><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>236</LINE></Guardar_Seg>
+  <Inc_Minutos><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>553</LINE></Inc_Minutos>
+  <ISR_D0><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>270</LINE></ISR_D0>
+  <ISR_D1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>274</LINE></ISR_D1>
+  <ISR_D2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>278</LINE></ISR_D2>
+  <ISR_D3><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>282</LINE></ISR_D3>
+  <ISR_Enviar><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>285</LINE></ISR_Enviar>
+  <Enviar_a_Puertos><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>383</LINE></Enviar_a_Puertos>
+  <ISR_T1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>297</LINE></ISR_T1>
+  <ISR_T2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>301</LINE></ISR_T2>
+  <ISR_T3><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>305</LINE></ISR_T3>
+  <ISR_T4><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>309</LINE></ISR_T4>
+  <ISR_Fin><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>312</LINE></ISR_Fin>
+  <Chk_Rapido><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>336</LINE></Chk_Rapido>
+  <Chk_Lento><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>324</LINE></Chk_Lento>
+  <Guardar_Cont><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>349</LINE></Guardar_Cont>
+  <LED_Fijo><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>346</LINE></LED_Fijo>
+  <Parpadeo_LEDs_Alarma><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>363</LINE></Parpadeo_LEDs_Alarma>
+  <Salir_Parpadeo><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>379</LINE></Salir_Parpadeo>
+  <Guardar_ms2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>377</LINE></Guardar_ms2>
+  <Enviar_Seguro><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>391</LINE></Enviar_Seguro>
+  <Chk_PC0><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>446</LINE></Chk_PC0>
+  <Cambiar_Estado><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>512</LINE></Cambiar_Estado>
+  <Esperar_Soltar_PC4><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>481</LINE></Esperar_Soltar_PC4>
+  <Fin_PCI1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>473</LINE></Fin_PCI1>
+  <Chk_PC1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>453</LINE></Chk_PC1>
+  <Accion_Up_D1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>630</LINE></Accion_Up_D1>
+  <Esperar_Soltar_PC0><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>487</LINE></Esperar_Soltar_PC0>
+  <Chk_PC2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>460</LINE></Chk_PC2>
+  <Accion_Down_D1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>672</LINE></Accion_Down_D1>
+  <Esperar_Soltar_PC1><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>493</LINE></Esperar_Soltar_PC1>
+  <Chk_PC3><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>467</LINE></Chk_PC3>
+  <Accion_Up_D2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>714</LINE></Accion_Up_D2>
+  <Esperar_Soltar_PC2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>499</LINE></Esperar_Soltar_PC2>
+  <Accion_Down_D2><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>753</LINE></Accion_Down_D2>
+  <Esperar_Soltar_PC3><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>505</LINE></Esperar_Soltar_PC3>
+  <Modo_Normal><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>524</LINE></Modo_Normal>
+  <Est_Config_Check><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>530</LINE></Est_Config_Check>
+  <Est_Pausar><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>536</LINE></Est_Pausar>
+  <Actualizar_LEDs><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>540</LINE></Actualizar_LEDs>
+  <LED_Parpadeo><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>546</LINE></LED_Parpadeo>
+  <Guardar_IMin><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>563</LINE></Guardar_IMin>
+  <Inc_Horas><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>568</LINE></Inc_Horas>
+  <Verificar_Alarma><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>582</LINE></Verificar_Alarma>
+  <Guardar_IHor><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>577</LINE></Guardar_IHor>
+  <Inc_Dia><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>604</LINE></Inc_Dia>
+  <Alarma_No><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>596</LINE></Alarma_No>
+  <Mantener_Buzzer><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>601</LINE></Mantener_Buzzer>
+  <Dias_Del_Mes><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>793</LINE></Dias_Del_Mes>
+  <Guardar_IDia><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>615</LINE></Guardar_IDia>
+  <Inc_Mes><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>619</LINE></Inc_Mes>
+  <Guardar_IMes><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>625</LINE></Guardar_IMes>
+  <Up_Horas><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>639</LINE></Up_Horas>
+  <Up_Dias><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>650</LINE></Up_Dias>
+  <Up_Alarma_Hora><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>662</LINE></Up_Alarma_Hora>
+  <Guardar_Up_Hora><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>646</LINE></Guardar_Up_Hora>
+  <Guardar_Up_Dia><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>658</LINE></Guardar_Up_Dia>
+  <Guardar_Up_AH><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>668</LINE></Guardar_Up_AH>
+  <Down_Horas><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>681</LINE></Down_Horas>
+  <Down_Dias><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>691</LINE></Down_Dias>
+  <Down_Alarma_Hora><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>704</LINE></Down_Alarma_Hora>
+  <Guardar_Down_Hora><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>687</LINE></Guardar_Down_Hora>
+  <Guardar_Down_Dia><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>700</LINE></Guardar_Down_Dia>
+  <Guardar_Down_AH><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>710</LINE></Guardar_Down_AH>
+  <Up_Minutos><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>723</LINE></Up_Minutos>
+  <Up_Mes><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>733</LINE></Up_Mes>
+  <Up_Alarma_Min><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>743</LINE></Up_Alarma_Min>
+  <Guardar_Up_Min><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>729</LINE></Guardar_Up_Min>
+  <Guardar_Up_Mes><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>739</LINE></Guardar_Up_Mes>
+  <Guardar_Up_AM><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>749</LINE></Guardar_Up_AM>
+  <Down_Minutos><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>762</LINE></Down_Minutos>
+  <Down_Mes><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>772</LINE></Down_Mes>
+  <Down_Alarma_Min><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>782</LINE></Down_Alarma_Min>
+  <Guardar_Down_Min><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>768</LINE></Guardar_Down_Min>
+  <Guardar_Down_Mes><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>778</LINE></Guardar_Down_Mes>
+  <Guardar_Down_AM><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>788</LINE></Guardar_Down_AM>
+  <DDM_Feb><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>807</LINE></DDM_Feb>
+  <DDM_30><FILE>C:\Users\María Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm</FILE><LINE>811</LINE></DDM_30>
+ </LABELS>
+</ASSEMBLER_INFO>

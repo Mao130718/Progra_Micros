@@ -1,0 +1,1901 @@
+
+AVRASM ver. 2.2.8  C:\Users\Mar�a Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm Sun Mar 15 19:43:21 2026
+
+[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
+C:\Users\Mar�a Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm(13): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.inc'
+[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
+C:\Users\Mar�a Olga\OneDrive - UVG\Documentos\Progra de Micros\Proyecto1_Reloj\Proyecto1_Reloj\main.asm(13): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.inc'
+                                 
+                                 /*
+                                 
+                                 ;***** Created: 2011-02-09 12:03 ******* Source: ATmega328P.xml **********
+                                 ;*************************************************************************
+                                 ;* A P P L I C A T I O N   N O T E   F O R   T H E   A V R   F A M I L Y
+                                 ;* 
+                                 ;* Number            : AVR000
+                                 ;* File Name         : "m328Pdef.inc"
+                                 ;* Title             : Register/Bit Definitions for the ATmega328P
+                                 ;* Date              : 2011-02-09
+                                 ;* Version           : 2.35
+                                 ;* Support E-mail    : avr@atmel.com
+                                 ;* Target MCU        : ATmega328P
+                                 ;* 
+                                 ;* DESCRIPTION
+                                 ;* When including this file in the assembly program file, all I/O register 
+                                 ;* names and I/O register bit names appearing in the data book can be used.
+                                 ;* In addition, the six registers forming the three data pointers X, Y and 
+                                 ;* Z have been assigned names XL - ZH. Highest RAM address for Internal 
+                                 ;* SRAM is also defined 
+                                 ;* 
+                                 ;* The Register names are represented by their hexadecimal address.
+                                 ;* 
+                                 ;* The Register Bit names are represented by their bit number (0-7).
+                                 ;* 
+                                 ;* Please observe the difference in using the bit names with instructions
+                                 ;* such as "sbr"/"cbr" (set/clear bit in register) and "sbrs"/"sbrc"
+                                 ;* (skip if bit in register set/cleared). The following example illustrates
+                                 ;* this:
+                                 ;* 
+                                 ;* in    r16,PORTB             ;read PORTB latch
+                                 ;* sbr   r16,(1<<PB6)+(1<<PB5) ;set PB6 and PB5 (use masks, not bit#)
+                                 ;* out   PORTB,r16             ;output to PORTB
+                                 ;* 
+                                 ;* in    r16,TIFR              ;read the Timer Interrupt Flag Register
+                                 ;* sbrc  r16,TOV0              ;test the overflow flag (use bit#)
+                                 ;* rjmp  TOV0_is_set           ;jump if set
+                                 ;* ...                         ;otherwise do something else
+                                 ;*************************************************************************
+                                 
+                                 #ifndef _M328PDEF_INC_
+                                 #define _M328PDEF_INC_
+                                 
+                                 
+                                 #pragma partinc 0
+                                 
+                                 ; ***** SPECIFY DEVICE ***************************************************
+                                 .device ATmega328P
+                                 #pragma AVRPART ADMIN PART_NAME ATmega328P
+                                 .equ	SIGNATURE_000	= 0x1e
+                                 .equ	SIGNATURE_001	= 0x95
+                                 .equ	SIGNATURE_002	= 0x0f
+                                 
+                                 #pragma AVRPART CORE CORE_VERSION V2E
+                                 
+                                 
+                                 ; ***** I/O REGISTER DEFINITIONS *****************************************
+                                 ; NOTE:
+                                 ; Definitions marked "MEMORY MAPPED"are extended I/O ports
+                                 ; and cannot be used with IN/OUT instructions
+                                 .equ	UDR0	= 0xc6	; MEMORY MAPPED
+                                 .equ	UBRR0L	= 0xc4	; MEMORY MAPPED
+                                 .equ	UBRR0H	= 0xc5	; MEMORY MAPPED
+                                 .equ	UCSR0C	= 0xc2	; MEMORY MAPPED
+                                 .equ	UCSR0B	= 0xc1	; MEMORY MAPPED
+                                 .equ	UCSR0A	= 0xc0	; MEMORY MAPPED
+                                 .equ	TWAMR	= 0xbd	; MEMORY MAPPED
+                                 .equ	TWCR	= 0xbc	; MEMORY MAPPED
+                                 .equ	TWDR	= 0xbb	; MEMORY MAPPED
+                                 .equ	TWAR	= 0xba	; MEMORY MAPPED
+                                 .equ	TWSR	= 0xb9	; MEMORY MAPPED
+                                 .equ	TWBR	= 0xb8	; MEMORY MAPPED
+                                 .equ	ASSR	= 0xb6	; MEMORY MAPPED
+                                 .equ	OCR2B	= 0xb4	; MEMORY MAPPED
+                                 .equ	OCR2A	= 0xb3	; MEMORY MAPPED
+                                 .equ	TCNT2	= 0xb2	; MEMORY MAPPED
+                                 .equ	TCCR2B	= 0xb1	; MEMORY MAPPED
+                                 .equ	TCCR2A	= 0xb0	; MEMORY MAPPED
+                                 .equ	OCR1BL	= 0x8a	; MEMORY MAPPED
+                                 .equ	OCR1BH	= 0x8b	; MEMORY MAPPED
+                                 .equ	OCR1AL	= 0x88	; MEMORY MAPPED
+                                 .equ	OCR1AH	= 0x89	; MEMORY MAPPED
+                                 .equ	ICR1L	= 0x86	; MEMORY MAPPED
+                                 .equ	ICR1H	= 0x87	; MEMORY MAPPED
+                                 .equ	TCNT1L	= 0x84	; MEMORY MAPPED
+                                 .equ	TCNT1H	= 0x85	; MEMORY MAPPED
+                                 .equ	TCCR1C	= 0x82	; MEMORY MAPPED
+                                 .equ	TCCR1B	= 0x81	; MEMORY MAPPED
+                                 .equ	TCCR1A	= 0x80	; MEMORY MAPPED
+                                 .equ	DIDR1	= 0x7f	; MEMORY MAPPED
+                                 .equ	DIDR0	= 0x7e	; MEMORY MAPPED
+                                 .equ	ADMUX	= 0x7c	; MEMORY MAPPED
+                                 .equ	ADCSRB	= 0x7b	; MEMORY MAPPED
+                                 .equ	ADCSRA	= 0x7a	; MEMORY MAPPED
+                                 .equ	ADCH	= 0x79	; MEMORY MAPPED
+                                 .equ	ADCL	= 0x78	; MEMORY MAPPED
+                                 .equ	TIMSK2	= 0x70	; MEMORY MAPPED
+                                 .equ	TIMSK1	= 0x6f	; MEMORY MAPPED
+                                 .equ	TIMSK0	= 0x6e	; MEMORY MAPPED
+                                 .equ	PCMSK1	= 0x6c	; MEMORY MAPPED
+                                 .equ	PCMSK2	= 0x6d	; MEMORY MAPPED
+                                 .equ	PCMSK0	= 0x6b	; MEMORY MAPPED
+                                 .equ	EICRA	= 0x69	; MEMORY MAPPED
+                                 .equ	PCICR	= 0x68	; MEMORY MAPPED
+                                 .equ	OSCCAL	= 0x66	; MEMORY MAPPED
+                                 .equ	PRR	= 0x64	; MEMORY MAPPED
+                                 .equ	CLKPR	= 0x61	; MEMORY MAPPED
+                                 .equ	WDTCSR	= 0x60	; MEMORY MAPPED
+                                 .equ	SREG	= 0x3f
+                                 .equ	SPL	= 0x3d
+                                 .equ	SPH	= 0x3e
+                                 .equ	SPMCSR	= 0x37
+                                 .equ	MCUCR	= 0x35
+                                 .equ	MCUSR	= 0x34
+                                 .equ	SMCR	= 0x33
+                                 .equ	ACSR	= 0x30
+                                 .equ	SPDR	= 0x2e
+                                 .equ	SPSR	= 0x2d
+                                 .equ	SPCR	= 0x2c
+                                 .equ	GPIOR2	= 0x2b
+                                 .equ	GPIOR1	= 0x2a
+                                 .equ	OCR0B	= 0x28
+                                 .equ	OCR0A	= 0x27
+                                 .equ	TCNT0	= 0x26
+                                 .equ	TCCR0B	= 0x25
+                                 .equ	TCCR0A	= 0x24
+                                 .equ	GTCCR	= 0x23
+                                 .equ	EEARH	= 0x22
+                                 .equ	EEARL	= 0x21
+                                 .equ	EEDR	= 0x20
+                                 .equ	EECR	= 0x1f
+                                 .equ	GPIOR0	= 0x1e
+                                 .equ	EIMSK	= 0x1d
+                                 .equ	EIFR	= 0x1c
+                                 .equ	PCIFR	= 0x1b
+                                 .equ	TIFR2	= 0x17
+                                 .equ	TIFR1	= 0x16
+                                 .equ	TIFR0	= 0x15
+                                 .equ	PORTD	= 0x0b
+                                 .equ	DDRD	= 0x0a
+                                 .equ	PIND	= 0x09
+                                 .equ	PORTC	= 0x08
+                                 .equ	DDRC	= 0x07
+                                 .equ	PINC	= 0x06
+                                 .equ	PORTB	= 0x05
+                                 .equ	DDRB	= 0x04
+                                 .equ	PINB	= 0x03
+                                 
+                                 
+                                 ; ***** BIT DEFINITIONS **************************************************
+                                 
+                                 ; ***** USART0 ***********************
+                                 ; UDR0 - USART I/O Data Register
+                                 .equ	UDR0_0	= 0	; USART I/O Data Register bit 0
+                                 .equ	UDR0_1	= 1	; USART I/O Data Register bit 1
+                                 .equ	UDR0_2	= 2	; USART I/O Data Register bit 2
+                                 .equ	UDR0_3	= 3	; USART I/O Data Register bit 3
+                                 .equ	UDR0_4	= 4	; USART I/O Data Register bit 4
+                                 .equ	UDR0_5	= 5	; USART I/O Data Register bit 5
+                                 .equ	UDR0_6	= 6	; USART I/O Data Register bit 6
+                                 .equ	UDR0_7	= 7	; USART I/O Data Register bit 7
+                                 
+                                 ; UCSR0A - USART Control and Status Register A
+                                 .equ	MPCM0	= 0	; Multi-processor Communication Mode
+                                 .equ	U2X0	= 1	; Double the USART transmission speed
+                                 .equ	UPE0	= 2	; Parity Error
+                                 .equ	DOR0	= 3	; Data overRun
+                                 .equ	FE0	= 4	; Framing Error
+                                 .equ	UDRE0	= 5	; USART Data Register Empty
+                                 .equ	TXC0	= 6	; USART Transmitt Complete
+                                 .equ	RXC0	= 7	; USART Receive Complete
+                                 
+                                 ; UCSR0B - USART Control and Status Register B
+                                 .equ	TXB80	= 0	; Transmit Data Bit 8
+                                 .equ	RXB80	= 1	; Receive Data Bit 8
+                                 .equ	UCSZ02	= 2	; Character Size
+                                 .equ	TXEN0	= 3	; Transmitter Enable
+                                 .equ	RXEN0	= 4	; Receiver Enable
+                                 .equ	UDRIE0	= 5	; USART Data register Empty Interrupt Enable
+                                 .equ	TXCIE0	= 6	; TX Complete Interrupt Enable
+                                 .equ	RXCIE0	= 7	; RX Complete Interrupt Enable
+                                 
+                                 ; UCSR0C - USART Control and Status Register C
+                                 .equ	UCPOL0	= 0	; Clock Polarity
+                                 .equ	UCSZ00	= 1	; Character Size
+                                 .equ	UCPHA0	= UCSZ00	; For compatibility
+                                 .equ	UCSZ01	= 2	; Character Size
+                                 .equ	UDORD0	= UCSZ01	; For compatibility
+                                 .equ	USBS0	= 3	; Stop Bit Select
+                                 .equ	UPM00	= 4	; Parity Mode Bit 0
+                                 .equ	UPM01	= 5	; Parity Mode Bit 1
+                                 .equ	UMSEL00	= 6	; USART Mode Select
+                                 .equ	UMSEL0	= UMSEL00	; For compatibility
+                                 .equ	UMSEL01	= 7	; USART Mode Select
+                                 .equ	UMSEL1	= UMSEL01	; For compatibility
+                                 
+                                 ; UBRR0H - USART Baud Rate Register High Byte
+                                 .equ	UBRR8	= 0	; USART Baud Rate Register bit 8
+                                 .equ	UBRR9	= 1	; USART Baud Rate Register bit 9
+                                 .equ	UBRR10	= 2	; USART Baud Rate Register bit 10
+                                 .equ	UBRR11	= 3	; USART Baud Rate Register bit 11
+                                 
+                                 ; UBRR0L - USART Baud Rate Register Low Byte
+                                 .equ	_UBRR0	= 0	; USART Baud Rate Register bit 0
+                                 .equ	_UBRR1	= 1	; USART Baud Rate Register bit 1
+                                 .equ	UBRR2	= 2	; USART Baud Rate Register bit 2
+                                 .equ	UBRR3	= 3	; USART Baud Rate Register bit 3
+                                 .equ	UBRR4	= 4	; USART Baud Rate Register bit 4
+                                 .equ	UBRR5	= 5	; USART Baud Rate Register bit 5
+                                 .equ	UBRR6	= 6	; USART Baud Rate Register bit 6
+                                 .equ	UBRR7	= 7	; USART Baud Rate Register bit 7
+                                 
+                                 
+                                 ; ***** TWI **************************
+                                 ; TWAMR - TWI (Slave) Address Mask Register
+                                 .equ	TWAM0	= 1	; 
+                                 .equ	TWAMR0	= TWAM0	; For compatibility
+                                 .equ	TWAM1	= 2	; 
+                                 .equ	TWAMR1	= TWAM1	; For compatibility
+                                 .equ	TWAM2	= 3	; 
+                                 .equ	TWAMR2	= TWAM2	; For compatibility
+                                 .equ	TWAM3	= 4	; 
+                                 .equ	TWAMR3	= TWAM3	; For compatibility
+                                 .equ	TWAM4	= 5	; 
+                                 .equ	TWAMR4	= TWAM4	; For compatibility
+                                 .equ	TWAM5	= 6	; 
+                                 .equ	TWAMR5	= TWAM5	; For compatibility
+                                 .equ	TWAM6	= 7	; 
+                                 .equ	TWAMR6	= TWAM6	; For compatibility
+                                 
+                                 ; TWBR - TWI Bit Rate register
+                                 .equ	TWBR0	= 0	; 
+                                 .equ	TWBR1	= 1	; 
+                                 .equ	TWBR2	= 2	; 
+                                 .equ	TWBR3	= 3	; 
+                                 .equ	TWBR4	= 4	; 
+                                 .equ	TWBR5	= 5	; 
+                                 .equ	TWBR6	= 6	; 
+                                 .equ	TWBR7	= 7	; 
+                                 
+                                 ; TWCR - TWI Control Register
+                                 .equ	TWIE	= 0	; TWI Interrupt Enable
+                                 .equ	TWEN	= 2	; TWI Enable Bit
+                                 .equ	TWWC	= 3	; TWI Write Collition Flag
+                                 .equ	TWSTO	= 4	; TWI Stop Condition Bit
+                                 .equ	TWSTA	= 5	; TWI Start Condition Bit
+                                 .equ	TWEA	= 6	; TWI Enable Acknowledge Bit
+                                 .equ	TWINT	= 7	; TWI Interrupt Flag
+                                 
+                                 ; TWSR - TWI Status Register
+                                 .equ	TWPS0	= 0	; TWI Prescaler
+                                 .equ	TWPS1	= 1	; TWI Prescaler
+                                 .equ	TWS3	= 3	; TWI Status
+                                 .equ	TWS4	= 4	; TWI Status
+                                 .equ	TWS5	= 5	; TWI Status
+                                 .equ	TWS6	= 6	; TWI Status
+                                 .equ	TWS7	= 7	; TWI Status
+                                 
+                                 ; TWDR - TWI Data register
+                                 .equ	TWD0	= 0	; TWI Data Register Bit 0
+                                 .equ	TWD1	= 1	; TWI Data Register Bit 1
+                                 .equ	TWD2	= 2	; TWI Data Register Bit 2
+                                 .equ	TWD3	= 3	; TWI Data Register Bit 3
+                                 .equ	TWD4	= 4	; TWI Data Register Bit 4
+                                 .equ	TWD5	= 5	; TWI Data Register Bit 5
+                                 .equ	TWD6	= 6	; TWI Data Register Bit 6
+                                 .equ	TWD7	= 7	; TWI Data Register Bit 7
+                                 
+                                 ; TWAR - TWI (Slave) Address register
+                                 .equ	TWGCE	= 0	; TWI General Call Recognition Enable Bit
+                                 .equ	TWA0	= 1	; TWI (Slave) Address register Bit 0
+                                 .equ	TWA1	= 2	; TWI (Slave) Address register Bit 1
+                                 .equ	TWA2	= 3	; TWI (Slave) Address register Bit 2
+                                 .equ	TWA3	= 4	; TWI (Slave) Address register Bit 3
+                                 .equ	TWA4	= 5	; TWI (Slave) Address register Bit 4
+                                 .equ	TWA5	= 6	; TWI (Slave) Address register Bit 5
+                                 .equ	TWA6	= 7	; TWI (Slave) Address register Bit 6
+                                 
+                                 
+                                 ; ***** TIMER_COUNTER_1 **************
+                                 ; TIMSK1 - Timer/Counter Interrupt Mask Register
+                                 .equ	TOIE1	= 0	; Timer/Counter1 Overflow Interrupt Enable
+                                 .equ	OCIE1A	= 1	; Timer/Counter1 Output CompareA Match Interrupt Enable
+                                 .equ	OCIE1B	= 2	; Timer/Counter1 Output CompareB Match Interrupt Enable
+                                 .equ	ICIE1	= 5	; Timer/Counter1 Input Capture Interrupt Enable
+                                 
+                                 ; TIFR1 - Timer/Counter Interrupt Flag register
+                                 .equ	TOV1	= 0	; Timer/Counter1 Overflow Flag
+                                 .equ	OCF1A	= 1	; Output Compare Flag 1A
+                                 .equ	OCF1B	= 2	; Output Compare Flag 1B
+                                 .equ	ICF1	= 5	; Input Capture Flag 1
+                                 
+                                 ; TCCR1A - Timer/Counter1 Control Register A
+                                 .equ	WGM10	= 0	; Waveform Generation Mode
+                                 .equ	WGM11	= 1	; Waveform Generation Mode
+                                 .equ	COM1B0	= 4	; Compare Output Mode 1B, bit 0
+                                 .equ	COM1B1	= 5	; Compare Output Mode 1B, bit 1
+                                 .equ	COM1A0	= 6	; Comparet Ouput Mode 1A, bit 0
+                                 .equ	COM1A1	= 7	; Compare Output Mode 1A, bit 1
+                                 
+                                 ; TCCR1B - Timer/Counter1 Control Register B
+                                 .equ	CS10	= 0	; Prescaler source of Timer/Counter 1
+                                 .equ	CS11	= 1	; Prescaler source of Timer/Counter 1
+                                 .equ	CS12	= 2	; Prescaler source of Timer/Counter 1
+                                 .equ	WGM12	= 3	; Waveform Generation Mode
+                                 .equ	WGM13	= 4	; Waveform Generation Mode
+                                 .equ	ICES1	= 6	; Input Capture 1 Edge Select
+                                 .equ	ICNC1	= 7	; Input Capture 1 Noise Canceler
+                                 
+                                 ; TCCR1C - Timer/Counter1 Control Register C
+                                 .equ	FOC1B	= 6	; 
+                                 .equ	FOC1A	= 7	; 
+                                 
+                                 ; GTCCR - General Timer/Counter Control Register
+                                 .equ	PSRSYNC	= 0	; Prescaler Reset Timer/Counter1 and Timer/Counter0
+                                 .equ	TSM	= 7	; Timer/Counter Synchronization Mode
+                                 
+                                 
+                                 ; ***** TIMER_COUNTER_2 **************
+                                 ; TIMSK2 - Timer/Counter Interrupt Mask register
+                                 .equ	TOIE2	= 0	; Timer/Counter2 Overflow Interrupt Enable
+                                 .equ	TOIE2A	= TOIE2	; For compatibility
+                                 .equ	OCIE2A	= 1	; Timer/Counter2 Output Compare Match A Interrupt Enable
+                                 .equ	OCIE2B	= 2	; Timer/Counter2 Output Compare Match B Interrupt Enable
+                                 
+                                 ; TIFR2 - Timer/Counter Interrupt Flag Register
+                                 .equ	TOV2	= 0	; Timer/Counter2 Overflow Flag
+                                 .equ	OCF2A	= 1	; Output Compare Flag 2A
+                                 .equ	OCF2B	= 2	; Output Compare Flag 2B
+                                 
+                                 ; TCCR2A - Timer/Counter2 Control Register A
+                                 .equ	WGM20	= 0	; Waveform Genration Mode
+                                 .equ	WGM21	= 1	; Waveform Genration Mode
+                                 .equ	COM2B0	= 4	; Compare Output Mode bit 0
+                                 .equ	COM2B1	= 5	; Compare Output Mode bit 1
+                                 .equ	COM2A0	= 6	; Compare Output Mode bit 1
+                                 .equ	COM2A1	= 7	; Compare Output Mode bit 1
+                                 
+                                 ; TCCR2B - Timer/Counter2 Control Register B
+                                 .equ	CS20	= 0	; Clock Select bit 0
+                                 .equ	CS21	= 1	; Clock Select bit 1
+                                 .equ	CS22	= 2	; Clock Select bit 2
+                                 .equ	WGM22	= 3	; Waveform Generation Mode
+                                 .equ	FOC2B	= 6	; Force Output Compare B
+                                 .equ	FOC2A	= 7	; Force Output Compare A
+                                 
+                                 ; TCNT2 - Timer/Counter2
+                                 .equ	TCNT2_0	= 0	; Timer/Counter 2 bit 0
+                                 .equ	TCNT2_1	= 1	; Timer/Counter 2 bit 1
+                                 .equ	TCNT2_2	= 2	; Timer/Counter 2 bit 2
+                                 .equ	TCNT2_3	= 3	; Timer/Counter 2 bit 3
+                                 .equ	TCNT2_4	= 4	; Timer/Counter 2 bit 4
+                                 .equ	TCNT2_5	= 5	; Timer/Counter 2 bit 5
+                                 .equ	TCNT2_6	= 6	; Timer/Counter 2 bit 6
+                                 .equ	TCNT2_7	= 7	; Timer/Counter 2 bit 7
+                                 
+                                 ; OCR2A - Timer/Counter2 Output Compare Register A
+                                 .equ	OCR2A_0	= 0	; Timer/Counter2 Output Compare Register Bit 0
+                                 .equ	OCR2A_1	= 1	; Timer/Counter2 Output Compare Register Bit 1
+                                 .equ	OCR2A_2	= 2	; Timer/Counter2 Output Compare Register Bit 2
+                                 .equ	OCR2A_3	= 3	; Timer/Counter2 Output Compare Register Bit 3
+                                 .equ	OCR2A_4	= 4	; Timer/Counter2 Output Compare Register Bit 4
+                                 .equ	OCR2A_5	= 5	; Timer/Counter2 Output Compare Register Bit 5
+                                 .equ	OCR2A_6	= 6	; Timer/Counter2 Output Compare Register Bit 6
+                                 .equ	OCR2A_7	= 7	; Timer/Counter2 Output Compare Register Bit 7
+                                 
+                                 ; OCR2B - Timer/Counter2 Output Compare Register B
+                                 .equ	OCR2B_0	= 0	; Timer/Counter2 Output Compare Register Bit 0
+                                 .equ	OCR2B_1	= 1	; Timer/Counter2 Output Compare Register Bit 1
+                                 .equ	OCR2B_2	= 2	; Timer/Counter2 Output Compare Register Bit 2
+                                 .equ	OCR2B_3	= 3	; Timer/Counter2 Output Compare Register Bit 3
+                                 .equ	OCR2B_4	= 4	; Timer/Counter2 Output Compare Register Bit 4
+                                 .equ	OCR2B_5	= 5	; Timer/Counter2 Output Compare Register Bit 5
+                                 .equ	OCR2B_6	= 6	; Timer/Counter2 Output Compare Register Bit 6
+                                 .equ	OCR2B_7	= 7	; Timer/Counter2 Output Compare Register Bit 7
+                                 
+                                 ; ASSR - Asynchronous Status Register
+                                 .equ	TCR2BUB	= 0	; Timer/Counter Control Register2 Update Busy
+                                 .equ	TCR2AUB	= 1	; Timer/Counter Control Register2 Update Busy
+                                 .equ	OCR2BUB	= 2	; Output Compare Register 2 Update Busy
+                                 .equ	OCR2AUB	= 3	; Output Compare Register2 Update Busy
+                                 .equ	TCN2UB	= 4	; Timer/Counter2 Update Busy
+                                 .equ	AS2	= 5	; Asynchronous Timer/Counter2
+                                 .equ	EXCLK	= 6	; Enable External Clock Input
+                                 
+                                 ; GTCCR - General Timer Counter Control register
+                                 .equ	PSRASY	= 1	; Prescaler Reset Timer/Counter2
+                                 .equ	PSR2	= PSRASY	; For compatibility
+                                 ;.equ	TSM	= 7	; Timer/Counter Synchronization Mode
+                                 
+                                 
+                                 ; ***** AD_CONVERTER *****************
+                                 ; ADMUX - The ADC multiplexer Selection Register
+                                 .equ	MUX0	= 0	; Analog Channel and Gain Selection Bits
+                                 .equ	MUX1	= 1	; Analog Channel and Gain Selection Bits
+                                 .equ	MUX2	= 2	; Analog Channel and Gain Selection Bits
+                                 .equ	MUX3	= 3	; Analog Channel and Gain Selection Bits
+                                 .equ	ADLAR	= 5	; Left Adjust Result
+                                 .equ	REFS0	= 6	; Reference Selection Bit 0
+                                 .equ	REFS1	= 7	; Reference Selection Bit 1
+                                 
+                                 ; ADCSRA - The ADC Control and Status register A
+                                 .equ	ADPS0	= 0	; ADC  Prescaler Select Bits
+                                 .equ	ADPS1	= 1	; ADC  Prescaler Select Bits
+                                 .equ	ADPS2	= 2	; ADC  Prescaler Select Bits
+                                 .equ	ADIE	= 3	; ADC Interrupt Enable
+                                 .equ	ADIF	= 4	; ADC Interrupt Flag
+                                 .equ	ADATE	= 5	; ADC  Auto Trigger Enable
+                                 .equ	ADSC	= 6	; ADC Start Conversion
+                                 .equ	ADEN	= 7	; ADC Enable
+                                 
+                                 ; ADCSRB - The ADC Control and Status register B
+                                 .equ	ADTS0	= 0	; ADC Auto Trigger Source bit 0
+                                 .equ	ADTS1	= 1	; ADC Auto Trigger Source bit 1
+                                 .equ	ADTS2	= 2	; ADC Auto Trigger Source bit 2
+                                 .equ	ACME	= 6	; 
+                                 
+                                 ; ADCH - ADC Data Register High Byte
+                                 .equ	ADCH0	= 0	; ADC Data Register High Byte Bit 0
+                                 .equ	ADCH1	= 1	; ADC Data Register High Byte Bit 1
+                                 .equ	ADCH2	= 2	; ADC Data Register High Byte Bit 2
+                                 .equ	ADCH3	= 3	; ADC Data Register High Byte Bit 3
+                                 .equ	ADCH4	= 4	; ADC Data Register High Byte Bit 4
+                                 .equ	ADCH5	= 5	; ADC Data Register High Byte Bit 5
+                                 .equ	ADCH6	= 6	; ADC Data Register High Byte Bit 6
+                                 .equ	ADCH7	= 7	; ADC Data Register High Byte Bit 7
+                                 
+                                 ; ADCL - ADC Data Register Low Byte
+                                 .equ	ADCL0	= 0	; ADC Data Register Low Byte Bit 0
+                                 .equ	ADCL1	= 1	; ADC Data Register Low Byte Bit 1
+                                 .equ	ADCL2	= 2	; ADC Data Register Low Byte Bit 2
+                                 .equ	ADCL3	= 3	; ADC Data Register Low Byte Bit 3
+                                 .equ	ADCL4	= 4	; ADC Data Register Low Byte Bit 4
+                                 .equ	ADCL5	= 5	; ADC Data Register Low Byte Bit 5
+                                 .equ	ADCL6	= 6	; ADC Data Register Low Byte Bit 6
+                                 .equ	ADCL7	= 7	; ADC Data Register Low Byte Bit 7
+                                 
+                                 ; DIDR0 - Digital Input Disable Register
+                                 .equ	ADC0D	= 0	; 
+                                 .equ	ADC1D	= 1	; 
+                                 .equ	ADC2D	= 2	; 
+                                 .equ	ADC3D	= 3	; 
+                                 .equ	ADC4D	= 4	; 
+                                 .equ	ADC5D	= 5	; 
+                                 
+                                 
+                                 ; ***** ANALOG_COMPARATOR ************
+                                 ; ACSR - Analog Comparator Control And Status Register
+                                 .equ	ACIS0	= 0	; Analog Comparator Interrupt Mode Select bit 0
+                                 .equ	ACIS1	= 1	; Analog Comparator Interrupt Mode Select bit 1
+                                 .equ	ACIC	= 2	; Analog Comparator Input Capture Enable
+                                 .equ	ACIE	= 3	; Analog Comparator Interrupt Enable
+                                 .equ	ACI	= 4	; Analog Comparator Interrupt Flag
+                                 .equ	ACO	= 5	; Analog Compare Output
+                                 .equ	ACBG	= 6	; Analog Comparator Bandgap Select
+                                 .equ	ACD	= 7	; Analog Comparator Disable
+                                 
+                                 ; DIDR1 - Digital Input Disable Register 1
+                                 .equ	AIN0D	= 0	; AIN0 Digital Input Disable
+                                 .equ	AIN1D	= 1	; AIN1 Digital Input Disable
+                                 
+                                 
+                                 ; ***** PORTB ************************
+                                 ; PORTB - Port B Data Register
+                                 .equ	PORTB0	= 0	; Port B Data Register bit 0
+                                 .equ	PB0	= 0	; For compatibility
+                                 .equ	PORTB1	= 1	; Port B Data Register bit 1
+                                 .equ	PB1	= 1	; For compatibility
+                                 .equ	PORTB2	= 2	; Port B Data Register bit 2
+                                 .equ	PB2	= 2	; For compatibility
+                                 .equ	PORTB3	= 3	; Port B Data Register bit 3
+                                 .equ	PB3	= 3	; For compatibility
+                                 .equ	PORTB4	= 4	; Port B Data Register bit 4
+                                 .equ	PB4	= 4	; For compatibility
+                                 .equ	PORTB5	= 5	; Port B Data Register bit 5
+                                 .equ	PB5	= 5	; For compatibility
+                                 .equ	PORTB6	= 6	; Port B Data Register bit 6
+                                 .equ	PB6	= 6	; For compatibility
+                                 .equ	PORTB7	= 7	; Port B Data Register bit 7
+                                 .equ	PB7	= 7	; For compatibility
+                                 
+                                 ; DDRB - Port B Data Direction Register
+                                 .equ	DDB0	= 0	; Port B Data Direction Register bit 0
+                                 .equ	DDB1	= 1	; Port B Data Direction Register bit 1
+                                 .equ	DDB2	= 2	; Port B Data Direction Register bit 2
+                                 .equ	DDB3	= 3	; Port B Data Direction Register bit 3
+                                 .equ	DDB4	= 4	; Port B Data Direction Register bit 4
+                                 .equ	DDB5	= 5	; Port B Data Direction Register bit 5
+                                 .equ	DDB6	= 6	; Port B Data Direction Register bit 6
+                                 .equ	DDB7	= 7	; Port B Data Direction Register bit 7
+                                 
+                                 ; PINB - Port B Input Pins
+                                 .equ	PINB0	= 0	; Port B Input Pins bit 0
+                                 .equ	PINB1	= 1	; Port B Input Pins bit 1
+                                 .equ	PINB2	= 2	; Port B Input Pins bit 2
+                                 .equ	PINB3	= 3	; Port B Input Pins bit 3
+                                 .equ	PINB4	= 4	; Port B Input Pins bit 4
+                                 .equ	PINB5	= 5	; Port B Input Pins bit 5
+                                 .equ	PINB6	= 6	; Port B Input Pins bit 6
+                                 .equ	PINB7	= 7	; Port B Input Pins bit 7
+                                 
+                                 
+                                 ; ***** PORTC ************************
+                                 ; PORTC - Port C Data Register
+                                 .equ	PORTC0	= 0	; Port C Data Register bit 0
+                                 .equ	PC0	= 0	; For compatibility
+                                 .equ	PORTC1	= 1	; Port C Data Register bit 1
+                                 .equ	PC1	= 1	; For compatibility
+                                 .equ	PORTC2	= 2	; Port C Data Register bit 2
+                                 .equ	PC2	= 2	; For compatibility
+                                 .equ	PORTC3	= 3	; Port C Data Register bit 3
+                                 .equ	PC3	= 3	; For compatibility
+                                 .equ	PORTC4	= 4	; Port C Data Register bit 4
+                                 .equ	PC4	= 4	; For compatibility
+                                 .equ	PORTC5	= 5	; Port C Data Register bit 5
+                                 .equ	PC5	= 5	; For compatibility
+                                 .equ	PORTC6	= 6	; Port C Data Register bit 6
+                                 .equ	PC6	= 6	; For compatibility
+                                 
+                                 ; DDRC - Port C Data Direction Register
+                                 .equ	DDC0	= 0	; Port C Data Direction Register bit 0
+                                 .equ	DDC1	= 1	; Port C Data Direction Register bit 1
+                                 .equ	DDC2	= 2	; Port C Data Direction Register bit 2
+                                 .equ	DDC3	= 3	; Port C Data Direction Register bit 3
+                                 .equ	DDC4	= 4	; Port C Data Direction Register bit 4
+                                 .equ	DDC5	= 5	; Port C Data Direction Register bit 5
+                                 .equ	DDC6	= 6	; Port C Data Direction Register bit 6
+                                 
+                                 ; PINC - Port C Input Pins
+                                 .equ	PINC0	= 0	; Port C Input Pins bit 0
+                                 .equ	PINC1	= 1	; Port C Input Pins bit 1
+                                 .equ	PINC2	= 2	; Port C Input Pins bit 2
+                                 .equ	PINC3	= 3	; Port C Input Pins bit 3
+                                 .equ	PINC4	= 4	; Port C Input Pins bit 4
+                                 .equ	PINC5	= 5	; Port C Input Pins bit 5
+                                 .equ	PINC6	= 6	; Port C Input Pins bit 6
+                                 
+                                 
+                                 ; ***** PORTD ************************
+                                 ; PORTD - Port D Data Register
+                                 .equ	PORTD0	= 0	; Port D Data Register bit 0
+                                 .equ	PD0	= 0	; For compatibility
+                                 .equ	PORTD1	= 1	; Port D Data Register bit 1
+                                 .equ	PD1	= 1	; For compatibility
+                                 .equ	PORTD2	= 2	; Port D Data Register bit 2
+                                 .equ	PD2	= 2	; For compatibility
+                                 .equ	PORTD3	= 3	; Port D Data Register bit 3
+                                 .equ	PD3	= 3	; For compatibility
+                                 .equ	PORTD4	= 4	; Port D Data Register bit 4
+                                 .equ	PD4	= 4	; For compatibility
+                                 .equ	PORTD5	= 5	; Port D Data Register bit 5
+                                 .equ	PD5	= 5	; For compatibility
+                                 .equ	PORTD6	= 6	; Port D Data Register bit 6
+                                 .equ	PD6	= 6	; For compatibility
+                                 .equ	PORTD7	= 7	; Port D Data Register bit 7
+                                 .equ	PD7	= 7	; For compatibility
+                                 
+                                 ; DDRD - Port D Data Direction Register
+                                 .equ	DDD0	= 0	; Port D Data Direction Register bit 0
+                                 .equ	DDD1	= 1	; Port D Data Direction Register bit 1
+                                 .equ	DDD2	= 2	; Port D Data Direction Register bit 2
+                                 .equ	DDD3	= 3	; Port D Data Direction Register bit 3
+                                 .equ	DDD4	= 4	; Port D Data Direction Register bit 4
+                                 .equ	DDD5	= 5	; Port D Data Direction Register bit 5
+                                 .equ	DDD6	= 6	; Port D Data Direction Register bit 6
+                                 .equ	DDD7	= 7	; Port D Data Direction Register bit 7
+                                 
+                                 ; PIND - Port D Input Pins
+                                 .equ	PIND0	= 0	; Port D Input Pins bit 0
+                                 .equ	PIND1	= 1	; Port D Input Pins bit 1
+                                 .equ	PIND2	= 2	; Port D Input Pins bit 2
+                                 .equ	PIND3	= 3	; Port D Input Pins bit 3
+                                 .equ	PIND4	= 4	; Port D Input Pins bit 4
+                                 .equ	PIND5	= 5	; Port D Input Pins bit 5
+                                 .equ	PIND6	= 6	; Port D Input Pins bit 6
+                                 .equ	PIND7	= 7	; Port D Input Pins bit 7
+                                 
+                                 
+                                 ; ***** TIMER_COUNTER_0 **************
+                                 ; TIMSK0 - Timer/Counter0 Interrupt Mask Register
+                                 .equ	TOIE0	= 0	; Timer/Counter0 Overflow Interrupt Enable
+                                 .equ	OCIE0A	= 1	; Timer/Counter0 Output Compare Match A Interrupt Enable
+                                 .equ	OCIE0B	= 2	; Timer/Counter0 Output Compare Match B Interrupt Enable
+                                 
+                                 ; TIFR0 - Timer/Counter0 Interrupt Flag register
+                                 .equ	TOV0	= 0	; Timer/Counter0 Overflow Flag
+                                 .equ	OCF0A	= 1	; Timer/Counter0 Output Compare Flag 0A
+                                 .equ	OCF0B	= 2	; Timer/Counter0 Output Compare Flag 0B
+                                 
+                                 ; TCCR0A - Timer/Counter  Control Register A
+                                 .equ	WGM00	= 0	; Waveform Generation Mode
+                                 .equ	WGM01	= 1	; Waveform Generation Mode
+                                 .equ	COM0B0	= 4	; Compare Output Mode, Fast PWm
+                                 .equ	COM0B1	= 5	; Compare Output Mode, Fast PWm
+                                 .equ	COM0A0	= 6	; Compare Output Mode, Phase Correct PWM Mode
+                                 .equ	COM0A1	= 7	; Compare Output Mode, Phase Correct PWM Mode
+                                 
+                                 ; TCCR0B - Timer/Counter Control Register B
+                                 .equ	CS00	= 0	; Clock Select
+                                 .equ	CS01	= 1	; Clock Select
+                                 .equ	CS02	= 2	; Clock Select
+                                 .equ	WGM02	= 3	; 
+                                 .equ	FOC0B	= 6	; Force Output Compare B
+                                 .equ	FOC0A	= 7	; Force Output Compare A
+                                 
+                                 ; TCNT0 - Timer/Counter0
+                                 .equ	TCNT0_0	= 0	; 
+                                 .equ	TCNT0_1	= 1	; 
+                                 .equ	TCNT0_2	= 2	; 
+                                 .equ	TCNT0_3	= 3	; 
+                                 .equ	TCNT0_4	= 4	; 
+                                 .equ	TCNT0_5	= 5	; 
+                                 .equ	TCNT0_6	= 6	; 
+                                 .equ	TCNT0_7	= 7	; 
+                                 
+                                 ; OCR0A - Timer/Counter0 Output Compare Register
+                                 .equ	OCR0A_0	= 0	; 
+                                 .equ	OCR0A_1	= 1	; 
+                                 .equ	OCR0A_2	= 2	; 
+                                 .equ	OCR0A_3	= 3	; 
+                                 .equ	OCR0A_4	= 4	; 
+                                 .equ	OCR0A_5	= 5	; 
+                                 .equ	OCR0A_6	= 6	; 
+                                 .equ	OCR0A_7	= 7	; 
+                                 
+                                 ; OCR0B - Timer/Counter0 Output Compare Register
+                                 .equ	OCR0B_0	= 0	; 
+                                 .equ	OCR0B_1	= 1	; 
+                                 .equ	OCR0B_2	= 2	; 
+                                 .equ	OCR0B_3	= 3	; 
+                                 .equ	OCR0B_4	= 4	; 
+                                 .equ	OCR0B_5	= 5	; 
+                                 .equ	OCR0B_6	= 6	; 
+                                 .equ	OCR0B_7	= 7	; 
+                                 
+                                 ; GTCCR - General Timer/Counter Control Register
+                                 ;.equ	PSRSYNC	= 0	; Prescaler Reset Timer/Counter1 and Timer/Counter0
+                                 .equ	PSR10	= PSRSYNC	; For compatibility
+                                 ;.equ	TSM	= 7	; Timer/Counter Synchronization Mode
+                                 
+                                 
+                                 ; ***** EXTERNAL_INTERRUPT ***********
+                                 ; EICRA - External Interrupt Control Register
+                                 .equ	ISC00	= 0	; External Interrupt Sense Control 0 Bit 0
+                                 .equ	ISC01	= 1	; External Interrupt Sense Control 0 Bit 1
+                                 .equ	ISC10	= 2	; External Interrupt Sense Control 1 Bit 0
+                                 .equ	ISC11	= 3	; External Interrupt Sense Control 1 Bit 1
+                                 
+                                 ; EIMSK - External Interrupt Mask Register
+                                 .equ	INT0	= 0	; External Interrupt Request 0 Enable
+                                 .equ	INT1	= 1	; External Interrupt Request 1 Enable
+                                 
+                                 ; EIFR - External Interrupt Flag Register
+                                 .equ	INTF0	= 0	; External Interrupt Flag 0
+                                 .equ	INTF1	= 1	; External Interrupt Flag 1
+                                 
+                                 ; PCICR - Pin Change Interrupt Control Register
+                                 .equ	PCIE0	= 0	; Pin Change Interrupt Enable 0
+                                 .equ	PCIE1	= 1	; Pin Change Interrupt Enable 1
+                                 .equ	PCIE2	= 2	; Pin Change Interrupt Enable 2
+                                 
+                                 ; PCMSK2 - Pin Change Mask Register 2
+                                 .equ	PCINT16	= 0	; Pin Change Enable Mask 16
+                                 .equ	PCINT17	= 1	; Pin Change Enable Mask 17
+                                 .equ	PCINT18	= 2	; Pin Change Enable Mask 18
+                                 .equ	PCINT19	= 3	; Pin Change Enable Mask 19
+                                 .equ	PCINT20	= 4	; Pin Change Enable Mask 20
+                                 .equ	PCINT21	= 5	; Pin Change Enable Mask 21
+                                 .equ	PCINT22	= 6	; Pin Change Enable Mask 22
+                                 .equ	PCINT23	= 7	; Pin Change Enable Mask 23
+                                 
+                                 ; PCMSK1 - Pin Change Mask Register 1
+                                 .equ	PCINT8	= 0	; Pin Change Enable Mask 8
+                                 .equ	PCINT9	= 1	; Pin Change Enable Mask 9
+                                 .equ	PCINT10	= 2	; Pin Change Enable Mask 10
+                                 .equ	PCINT11	= 3	; Pin Change Enable Mask 11
+                                 .equ	PCINT12	= 4	; Pin Change Enable Mask 12
+                                 .equ	PCINT13	= 5	; Pin Change Enable Mask 13
+                                 .equ	PCINT14	= 6	; Pin Change Enable Mask 14
+                                 
+                                 ; PCMSK0 - Pin Change Mask Register 0
+                                 .equ	PCINT0	= 0	; Pin Change Enable Mask 0
+                                 .equ	PCINT1	= 1	; Pin Change Enable Mask 1
+                                 .equ	PCINT2	= 2	; Pin Change Enable Mask 2
+                                 .equ	PCINT3	= 3	; Pin Change Enable Mask 3
+                                 .equ	PCINT4	= 4	; Pin Change Enable Mask 4
+                                 .equ	PCINT5	= 5	; Pin Change Enable Mask 5
+                                 .equ	PCINT6	= 6	; Pin Change Enable Mask 6
+                                 .equ	PCINT7	= 7	; Pin Change Enable Mask 7
+                                 
+                                 ; PCIFR - Pin Change Interrupt Flag Register
+                                 .equ	PCIF0	= 0	; Pin Change Interrupt Flag 0
+                                 .equ	PCIF1	= 1	; Pin Change Interrupt Flag 1
+                                 .equ	PCIF2	= 2	; Pin Change Interrupt Flag 2
+                                 
+                                 
+                                 ; ***** SPI **************************
+                                 ; SPDR - SPI Data Register
+                                 .equ	SPDR0	= 0	; SPI Data Register bit 0
+                                 .equ	SPDR1	= 1	; SPI Data Register bit 1
+                                 .equ	SPDR2	= 2	; SPI Data Register bit 2
+                                 .equ	SPDR3	= 3	; SPI Data Register bit 3
+                                 .equ	SPDR4	= 4	; SPI Data Register bit 4
+                                 .equ	SPDR5	= 5	; SPI Data Register bit 5
+                                 .equ	SPDR6	= 6	; SPI Data Register bit 6
+                                 .equ	SPDR7	= 7	; SPI Data Register bit 7
+                                 
+                                 ; SPSR - SPI Status Register
+                                 .equ	SPI2X	= 0	; Double SPI Speed Bit
+                                 .equ	WCOL	= 6	; Write Collision Flag
+                                 .equ	SPIF	= 7	; SPI Interrupt Flag
+                                 
+                                 ; SPCR - SPI Control Register
+                                 .equ	SPR0	= 0	; SPI Clock Rate Select 0
+                                 .equ	SPR1	= 1	; SPI Clock Rate Select 1
+                                 .equ	CPHA	= 2	; Clock Phase
+                                 .equ	CPOL	= 3	; Clock polarity
+                                 .equ	MSTR	= 4	; Master/Slave Select
+                                 .equ	DORD	= 5	; Data Order
+                                 .equ	SPE	= 6	; SPI Enable
+                                 .equ	SPIE	= 7	; SPI Interrupt Enable
+                                 
+                                 
+                                 ; ***** WATCHDOG *********************
+                                 ; WDTCSR - Watchdog Timer Control Register
+                                 .equ	WDP0	= 0	; Watch Dog Timer Prescaler bit 0
+                                 .equ	WDP1	= 1	; Watch Dog Timer Prescaler bit 1
+                                 .equ	WDP2	= 2	; Watch Dog Timer Prescaler bit 2
+                                 .equ	WDE	= 3	; Watch Dog Enable
+                                 .equ	WDCE	= 4	; Watchdog Change Enable
+                                 .equ	WDP3	= 5	; Watchdog Timer Prescaler Bit 3
+                                 .equ	WDIE	= 6	; Watchdog Timeout Interrupt Enable
+                                 .equ	WDIF	= 7	; Watchdog Timeout Interrupt Flag
+                                 
+                                 
+                                 ; ***** CPU **************************
+                                 ; SREG - Status Register
+                                 .equ	SREG_C	= 0	; Carry Flag
+                                 .equ	SREG_Z	= 1	; Zero Flag
+                                 .equ	SREG_N	= 2	; Negative Flag
+                                 .equ	SREG_V	= 3	; Two's Complement Overflow Flag
+                                 .equ	SREG_S	= 4	; Sign Bit
+                                 .equ	SREG_H	= 5	; Half Carry Flag
+                                 .equ	SREG_T	= 6	; Bit Copy Storage
+                                 .equ	SREG_I	= 7	; Global Interrupt Enable
+                                 
+                                 ; OSCCAL - Oscillator Calibration Value
+                                 .equ	CAL0	= 0	; Oscillator Calibration Value Bit0
+                                 .equ	CAL1	= 1	; Oscillator Calibration Value Bit1
+                                 .equ	CAL2	= 2	; Oscillator Calibration Value Bit2
+                                 .equ	CAL3	= 3	; Oscillator Calibration Value Bit3
+                                 .equ	CAL4	= 4	; Oscillator Calibration Value Bit4
+                                 .equ	CAL5	= 5	; Oscillator Calibration Value Bit5
+                                 .equ	CAL6	= 6	; Oscillator Calibration Value Bit6
+                                 .equ	CAL7	= 7	; Oscillator Calibration Value Bit7
+                                 
+                                 ; CLKPR - Clock Prescale Register
+                                 .equ	CLKPS0	= 0	; Clock Prescaler Select Bit 0
+                                 .equ	CLKPS1	= 1	; Clock Prescaler Select Bit 1
+                                 .equ	CLKPS2	= 2	; Clock Prescaler Select Bit 2
+                                 .equ	CLKPS3	= 3	; Clock Prescaler Select Bit 3
+                                 .equ	CLKPCE	= 7	; Clock Prescaler Change Enable
+                                 
+                                 ; SPMCSR - Store Program Memory Control and Status Register
+                                 .equ    SELFPRGEN = 0; Added for backwards compatibility
+                                 .equ	SPMEN	= 0	; Store Program Memory
+                                 .equ	PGERS	= 1	; Page Erase
+                                 .equ	PGWRT	= 2	; Page Write
+                                 .equ	BLBSET	= 3	; Boot Lock Bit Set
+                                 .equ	RWWSRE	= 4	; Read-While-Write section read enable
+                                 .equ    SIGRD   = 5 ; Signature Row Read
+                                 .equ	RWWSB	= 6	; Read-While-Write Section Busy
+                                 .equ	SPMIE	= 7	; SPM Interrupt Enable
+                                 
+                                 ; MCUCR - MCU Control Register
+                                 .equ	IVCE	= 0	; 
+                                 .equ	IVSEL	= 1	; 
+                                 .equ	PUD	= 4	; 
+                                 .equ	BODSE	= 5	; BOD Sleep Enable
+                                 .equ	BODS	= 6	; BOD Sleep
+                                 
+                                 ; MCUSR - MCU Status Register
+                                 .equ	PORF	= 0	; Power-on reset flag
+                                 .equ	EXTRF	= 1	; External Reset Flag
+                                 .equ	EXTREF	= EXTRF	; For compatibility
+                                 .equ	BORF	= 2	; Brown-out Reset Flag
+                                 .equ	WDRF	= 3	; Watchdog Reset Flag
+                                 
+                                 ; SMCR - Sleep Mode Control Register
+                                 .equ	SE	= 0	; Sleep Enable
+                                 .equ	SM0	= 1	; Sleep Mode Select Bit 0
+                                 .equ	SM1	= 2	; Sleep Mode Select Bit 1
+                                 .equ	SM2	= 3	; Sleep Mode Select Bit 2
+                                 
+                                 ; GPIOR2 - General Purpose I/O Register 2
+                                 .equ	GPIOR20	= 0	; 
+                                 .equ	GPIOR21	= 1	; 
+                                 .equ	GPIOR22	= 2	; 
+                                 .equ	GPIOR23	= 3	; 
+                                 .equ	GPIOR24	= 4	; 
+                                 .equ	GPIOR25	= 5	; 
+                                 .equ	GPIOR26	= 6	; 
+                                 .equ	GPIOR27	= 7	; 
+                                 
+                                 ; GPIOR1 - General Purpose I/O Register 1
+                                 .equ	GPIOR10	= 0	; 
+                                 .equ	GPIOR11	= 1	; 
+                                 .equ	GPIOR12	= 2	; 
+                                 .equ	GPIOR13	= 3	; 
+                                 .equ	GPIOR14	= 4	; 
+                                 .equ	GPIOR15	= 5	; 
+                                 .equ	GPIOR16	= 6	; 
+                                 .equ	GPIOR17	= 7	; 
+                                 
+                                 ; GPIOR0 - General Purpose I/O Register 0
+                                 .equ	GPIOR00	= 0	; 
+                                 .equ	GPIOR01	= 1	; 
+                                 .equ	GPIOR02	= 2	; 
+                                 .equ	GPIOR03	= 3	; 
+                                 .equ	GPIOR04	= 4	; 
+                                 .equ	GPIOR05	= 5	; 
+                                 .equ	GPIOR06	= 6	; 
+                                 .equ	GPIOR07	= 7	; 
+                                 
+                                 ; PRR - Power Reduction Register
+                                 .equ	PRADC	= 0	; Power Reduction ADC
+                                 .equ	PRUSART0	= 1	; Power Reduction USART
+                                 .equ	PRSPI	= 2	; Power Reduction Serial Peripheral Interface
+                                 .equ	PRTIM1	= 3	; Power Reduction Timer/Counter1
+                                 .equ	PRTIM0	= 5	; Power Reduction Timer/Counter0
+                                 .equ	PRTIM2	= 6	; Power Reduction Timer/Counter2
+                                 .equ	PRTWI	= 7	; Power Reduction TWI
+                                 
+                                 
+                                 ; ***** EEPROM ***********************
+                                 ; EEARL - EEPROM Address Register Low Byte
+                                 .equ	EEAR0	= 0	; EEPROM Read/Write Access Bit 0
+                                 .equ	EEAR1	= 1	; EEPROM Read/Write Access Bit 1
+                                 .equ	EEAR2	= 2	; EEPROM Read/Write Access Bit 2
+                                 .equ	EEAR3	= 3	; EEPROM Read/Write Access Bit 3
+                                 .equ	EEAR4	= 4	; EEPROM Read/Write Access Bit 4
+                                 .equ	EEAR5	= 5	; EEPROM Read/Write Access Bit 5
+                                 .equ	EEAR6	= 6	; EEPROM Read/Write Access Bit 6
+                                 .equ	EEAR7	= 7	; EEPROM Read/Write Access Bit 7
+                                 
+                                 ; EEARH - EEPROM Address Register High Byte
+                                 .equ	EEAR8	= 0	; EEPROM Read/Write Access Bit 8
+                                 .equ	EEAR9	= 1	; EEPROM Read/Write Access Bit 9
+                                 
+                                 ; EEDR - EEPROM Data Register
+                                 .equ	EEDR0	= 0	; EEPROM Data Register bit 0
+                                 .equ	EEDR1	= 1	; EEPROM Data Register bit 1
+                                 .equ	EEDR2	= 2	; EEPROM Data Register bit 2
+                                 .equ	EEDR3	= 3	; EEPROM Data Register bit 3
+                                 .equ	EEDR4	= 4	; EEPROM Data Register bit 4
+                                 .equ	EEDR5	= 5	; EEPROM Data Register bit 5
+                                 .equ	EEDR6	= 6	; EEPROM Data Register bit 6
+                                 .equ	EEDR7	= 7	; EEPROM Data Register bit 7
+                                 
+                                 ; EECR - EEPROM Control Register
+                                 .equ	EERE	= 0	; EEPROM Read Enable
+                                 .equ	EEPE	= 1	; EEPROM Write Enable
+                                 .equ	EEMPE	= 2	; EEPROM Master Write Enable
+                                 .equ	EERIE	= 3	; EEPROM Ready Interrupt Enable
+                                 .equ	EEPM0	= 4	; EEPROM Programming Mode Bit 0
+                                 .equ	EEPM1	= 5	; EEPROM Programming Mode Bit 1
+                                 
+                                 
+                                 
+                                 ; ***** LOCKSBITS ********************************************************
+                                 .equ	LB1	= 0	; Lock bit
+                                 .equ	LB2	= 1	; Lock bit
+                                 .equ	BLB01	= 2	; Boot Lock bit
+                                 .equ	BLB02	= 3	; Boot Lock bit
+                                 .equ	BLB11	= 4	; Boot lock bit
+                                 .equ	BLB12	= 5	; Boot lock bit
+                                 
+                                 
+                                 ; ***** FUSES ************************************************************
+                                 ; LOW fuse bits
+                                 .equ	CKSEL0	= 0	; Select Clock Source
+                                 .equ	CKSEL1	= 1	; Select Clock Source
+                                 .equ	CKSEL2	= 2	; Select Clock Source
+                                 .equ	CKSEL3	= 3	; Select Clock Source
+                                 .equ	SUT0	= 4	; Select start-up time
+                                 .equ	SUT1	= 5	; Select start-up time
+                                 .equ	CKOUT	= 6	; Clock output
+                                 .equ	CKDIV8	= 7	; Divide clock by 8
+                                 
+                                 ; HIGH fuse bits
+                                 .equ	BOOTRST	= 0	; Select reset vector
+                                 .equ	BOOTSZ0	= 1	; Select boot size
+                                 .equ	BOOTSZ1	= 2	; Select boot size
+                                 .equ	EESAVE	= 3	; EEPROM memory is preserved through chip erase
+                                 .equ	WDTON	= 4	; Watchdog Timer Always On
+                                 .equ	SPIEN	= 5	; Enable Serial programming and Data Downloading
+                                 .equ	DWEN	= 6	; debugWIRE Enable
+                                 .equ	RSTDISBL	= 7	; External reset disable
+                                 
+                                 ; EXTENDED fuse bits
+                                 .equ	BODLEVEL0	= 0	; Brown-out Detector trigger level
+                                 .equ	BODLEVEL1	= 1	; Brown-out Detector trigger level
+                                 .equ	BODLEVEL2	= 2	; Brown-out Detector trigger level
+                                 
+                                 
+                                 
+                                 ; ***** CPU REGISTER DEFINITIONS *****************************************
+                                 .def	XH	= r27
+                                 .def	XL	= r26
+                                 .def	YH	= r29
+                                 .def	YL	= r28
+                                 .def	ZH	= r31
+                                 .def	ZL	= r30
+                                 
+                                 
+                                 
+                                 ; ***** DATA MEMORY DECLARATIONS *****************************************
+                                 .equ	FLASHEND	= 0x3fff	; Note: Word address
+                                 .equ	IOEND	= 0x00ff
+                                 .equ	SRAM_START	= 0x0100
+                                 .equ	SRAM_SIZE	= 2048
+                                 .equ	RAMEND	= 0x08ff
+                                 .equ	XRAMEND	= 0x0000
+                                 .equ	E2END	= 0x03ff
+                                 .equ	EEPROMEND	= 0x03ff
+                                 .equ	EEADRBITS	= 10
+                                 #pragma AVRPART MEMORY PROG_FLASH 32768
+                                 #pragma AVRPART MEMORY EEPROM 1024
+                                 #pragma AVRPART MEMORY INT_SRAM SIZE 2048
+                                 #pragma AVRPART MEMORY INT_SRAM START_ADDR 0x100
+                                 
+                                 
+                                 
+                                 ; ***** BOOTLOADER DECLARATIONS ******************************************
+                                 .equ	NRWW_START_ADDR	= 0x3800
+                                 .equ	NRWW_STOP_ADDR	= 0x3fff
+                                 .equ	RWW_START_ADDR	= 0x0
+                                 .equ	RWW_STOP_ADDR	= 0x37ff
+                                 .equ	PAGESIZE	= 64
+                                 .equ	FIRSTBOOTSTART	= 0x3f00
+                                 .equ	SECONDBOOTSTART	= 0x3e00
+                                 .equ	THIRDBOOTSTART	= 0x3c00
+                                 .equ	FOURTHBOOTSTART	= 0x3800
+                                 .equ	SMALLBOOTSTART	= FIRSTBOOTSTART
+                                 .equ	LARGEBOOTSTART	= FOURTHBOOTSTART
+                                 
+                                 
+                                 
+                                 ; ***** INTERRUPT VECTORS ************************************************
+                                 .equ	INT0addr	= 0x0002	; External Interrupt Request 0
+                                 .equ	INT1addr	= 0x0004	; External Interrupt Request 1
+                                 .equ	PCI0addr	= 0x0006	; Pin Change Interrupt Request 0
+                                 .equ	PCI1addr	= 0x0008	; Pin Change Interrupt Request 0
+                                 .equ	PCI2addr	= 0x000a	; Pin Change Interrupt Request 1
+                                 .equ	WDTaddr	= 0x000c	; Watchdog Time-out Interrupt
+                                 .equ	OC2Aaddr	= 0x000e	; Timer/Counter2 Compare Match A
+                                 .equ	OC2Baddr	= 0x0010	; Timer/Counter2 Compare Match A
+                                 .equ	OVF2addr	= 0x0012	; Timer/Counter2 Overflow
+                                 .equ	ICP1addr	= 0x0014	; Timer/Counter1 Capture Event
+                                 .equ	OC1Aaddr	= 0x0016	; Timer/Counter1 Compare Match A
+                                 .equ	OC1Baddr	= 0x0018	; Timer/Counter1 Compare Match B
+                                 .equ	OVF1addr	= 0x001a	; Timer/Counter1 Overflow
+                                 .equ	OC0Aaddr	= 0x001c	; TimerCounter0 Compare Match A
+                                 .equ	OC0Baddr	= 0x001e	; TimerCounter0 Compare Match B
+                                 .equ	OVF0addr	= 0x0020	; Timer/Couner0 Overflow
+                                 .equ	SPIaddr	= 0x0022	; SPI Serial Transfer Complete
+                                 .equ	URXCaddr	= 0x0024	; USART Rx Complete
+                                 .equ	UDREaddr	= 0x0026	; USART, Data Register Empty
+                                 .equ	UTXCaddr	= 0x0028	; USART Tx Complete
+                                 .equ	ADCCaddr	= 0x002a	; ADC Conversion Complete
+                                 .equ	ERDYaddr	= 0x002c	; EEPROM Ready
+                                 .equ	ACIaddr	= 0x002e	; Analog Comparator
+                                 .equ	TWIaddr	= 0x0030	; Two-wire Serial Interface
+                                 .equ	SPMRaddr	= 0x0032	; Store Program Memory Read
+                                 
+                                 .equ	INT_VECTORS_SIZE	= 52	; size in words
+                                 
+                                 #endif  /* _M328PDEF_INC_ */
+                                 
+                                 ; ***** END OF FILE ******************************************************
+                                 
+                                 * Proyecto1_Reloj.asm
+                                 *
+                                 * Creado: 3/03/2026 14:18:03
+                                 * Autor : María Olga Joachin
+                                 * Descripción: Funcionamiento de un reloj con 4 displays de 7 segmentos
+                                 el cual estará controlado por 4 pushbuttons, uno para el cambio de configuracion
+                                 mientras que los otro 4 para el incremento y decremento de los displays. 
+                                 */
+                                 /****************************************/
+                                 
+                                 // Encabezado (Definición de Registros, Variables y Constantes)
+                                 .include "M328PDEF.inc"
+                                 
+                                 ;***** Created: 2011-02-09 12:03 ******* Source: ATmega328P.xml **********
+                                 ;*************************************************************************
+                                 ;* A P P L I C A T I O N   N O T E   F O R   T H E   A V R   F A M I L Y
+                                 ;* 
+                                 ;* Number            : AVR000
+                                 ;* File Name         : "m328Pdef.inc"
+                                 ;* Title             : Register/Bit Definitions for the ATmega328P
+                                 ;* Date              : 2011-02-09
+                                 ;* Version           : 2.35
+                                 ;* Support E-mail    : avr@atmel.com
+                                 ;* Target MCU        : ATmega328P
+                                 ;* 
+                                 ;* DESCRIPTION
+                                 ;* When including this file in the assembly program file, all I/O register 
+                                 ;* names and I/O register bit names appearing in the data book can be used.
+                                 ;* In addition, the six registers forming the three data pointers X, Y and 
+                                 ;* Z have been assigned names XL - ZH. Highest RAM address for Internal 
+                                 ;* SRAM is also defined 
+                                 ;* 
+                                 ;* The Register names are represented by their hexadecimal address.
+                                 ;* 
+                                 ;* The Register Bit names are represented by their bit number (0-7).
+                                 ;* 
+                                 ;* Please observe the difference in using the bit names with instructions
+                                 ;* such as "sbr"/"cbr" (set/clear bit in register) and "sbrs"/"sbrc"
+                                 ;* (skip if bit in register set/cleared). The following example illustrates
+                                 ;* this:
+                                 ;* 
+                                 ;* in    r16,PORTB             ;read PORTB latch
+                                 ;* sbr   r16,(1<<PB6)+(1<<PB5) ;set PB6 and PB5 (use masks, not bit#)
+                                 ;* out   PORTB,r16             ;output to PORTB
+                                 ;* 
+                                 ;* in    r16,TIFR              ;read the Timer Interrupt Flag Register
+                                 ;* sbrc  r16,TOV0              ;test the overflow flag (use bit#)
+                                 ;* rjmp  TOV0_is_set           ;jump if set
+                                 ;* ...                         ;otherwise do something else
+                                 ;*************************************************************************
+                                 
+                                 #ifndef _M328PDEF_INC_
+                                 #endif  /* _M328PDEF_INC_ */
+                                 
+                                 ; ***** END OF FILE ******************************************************
+                                 
+                                 
+                                 .def temp           = r16		 // Registro temporal de uso general
+                                 .def num_a_mostrar  = r18		 // Numero del los digitos que se mostraran en el display, 0 a 9
+                                 .def estado         = r25    	 // Estado actual del reloj 
+                                 .def en_config      = r19    	 // Banderas para verificar el estado de configuración
+                                 .def disp_select    = r24    	 // Indica cual de los display esta siendo activado
+                                 
+                                 //variable_name:     .byte   1   // Memory alocation for variable_name:     .byte   (byte size)
+                                 .dseg
+                                 .org 0x0100
+000100                           segundos:			 .byte 1	 // Almacena los segundos actuales
+000101                           minutos:			 .byte 1	 // Almacena los minutos actuales
+000102                           horas:				 .byte 1	 // Almacena la hora actual
+000103                           dia:				 .byte 1	 // Almacena el dia del mes actual
+000104                           mes:				 .byte 1	 // Almacena el mes actual
+000105                           alarma_horas:		 .byte 1	 // Hora de configuración para la alarma (0 a 23)
+000106                           alarma_minutos:		 .byte 1	 // Minuto de configuración para la alarma (0 a 59)
+000107                           alarma_activa:		 .byte 1	 // Bandera para activar la alarma
+000108                           cont_ms:			 .byte 1     // Contador de milisegundos para el parpadeo de los LEDs
+000109                           cont_ms2:			 .byte 1     // Contador de milisegundos para el estado de la alarma
+00010a                           digito0:			 .byte 1     // Valor del digito del Display 1
+00010b                           digito1:			 .byte 1     // Valor del digito del Display 2
+00010c                           digito2:			 .byte 1     // Valor del digito del Display 3
+00010d                           digito3:			 .byte 1     // Valor del digito del Display 4
+                                 
+                                 // Vectores de interrupción
+                                 .cseg
+                                 .org 0x0000
+000000 c038                          rjmp Setup
+                                 
+                                 .org 0x0006                  // PCINT1 - Botones Puerto C
+000006 c156                          rjmp PCI1_ISR
+                                 
+                                 .org 0x001A                  // Timer1 Compare Match A - 1 segundo
+00001a c0a8                          rjmp TIM1_COMPA_ISR
+                                 
+                                 .org 0x001C                  // Timer0 Compare Match A - 1ms multiplexado
+00001c c0c0                          rjmp TIM0_COMPA_ISR
+                                 
+                                 // Tabla de 7 segmentos (Display Cátodo Común)
+                                 .org 0x0034
+                                 Tabla7Seg:
+000034 063f
+000035 4f5b
+000036 6d66
+000037 077d
+000038 6f7f                          .DB 0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F
+                                 
+                                 /****************************************/
+                                 // Configuración de la pila
+                                 Setup:
+                                     // Inicialización del stack
+000039 ef0f                          ldi temp, low(RAMEND)
+00003a bf0d                          out SPL, temp
+00003b e008                          ldi temp, high(RAMEND)
+00003c bf0e                          out SPH, temp
+                                 
+                                 /****************************************/
+                                 // Configuracion MCU
+                                 
+                                     // Configuración de Puertos
+                                     // DDRB: PB0-PB5 salidas 
+00003d e30f                          ldi temp, 0b00111111					// Se escriben de PB0 a PB5 como salidas
+00003e b904                          out DDRB, temp							// Se escribe la configuración en el registro del Puerto B
+                                 
+                                 	// DDRD: PD2-PD7 salidas 
+00003f ef0c                      	ldi temp, 0b11111100					// Se escriben de PD2 a PD7 como salidas
+000040 b90a                      	out DDRD, temp							// Se escribe la configuración en el registro del Puerto D
+                                 	
+                                 	// DDRC: PC5 salida (buzzer), PC0-PC4 entradas (botones)
+000041 e200                      	ldi temp, 0b00100000					// Se escriben PC5 como salida del buzzer y PC0 a PC4 como entradas 
+000042 b907                      	out DDRC, temp							// Se escribe la configuración en el registro del Puerto C
+                                 	
+                                 	// Pull-ups botones PC0-PC4, PC5 apagado al inicio
+000043 e10f                      	ldi temp, 0b00011111					// Habilita el pull-up interno
+000044 b908                      	out PORTC, temp							// Se escribe en PORTC 
+                                 
+                                     // Apagar displays al inicio
+000045 2700                          clr temp								// Limpieza del registro
+000046 b905                          out PORTB, temp							// Se apagan todos los segmentos del Puerto B
+000047 b90b                          out PORTD, temp							// Se apagan los pines del Puerto D
+                                 
+                                     // Configuración del Timer0
+                                     ; CTC, prescaler 64, OCR0A=249 => 1ms @ 16MHz
+000048 e002                          ldi temp, (1 << WGM01)					// Modo CTC, el temporizador se reinicia cuando llega al valor de OCR0A
+000049 bd04                          out TCCR0A, temp						// Configuración del registro de control A del Timer0
+00004a e003                          ldi temp, (1 << CS01) | (1 << CS00)		// Se usa un prescaler de 64
+00004b bd05                          out TCCR0B, temp						// Configuración del registro de control B del Timer0 con el prescaler
+00004c ef09                          ldi temp, 249							// El valro a comparar para una interrupcion de 1ms
+00004d bd07                          out OCR0A, temp							// Se carga el valor de comparación del Timer0
+00004e e002                          ldi temp, (1 << OCIE0A)					// Se habilita la interrupción del Timer0
+00004f 9300 006e                     sts TIMSK0, temp						// Se escribe en el registro de mascara de interrupciones del Timer0
+                                 
+                                     // Configurar Timer1
+                                     // CTC, prescaler 1024, OCR1A=15624 => 1s @ 16MHz
+000051 e30d                          ldi temp, high(15624)					// Valor alto de comparación para 1 segundo
+000052 9300 0089                     sts OCR1AH, temp						// Carga el byte alto de OCR1A en la memoria
+000054 e008                          ldi temp, low(15624)					// Valor bajo de comparación para 1 segundo
+000055 9300 0088                     sts OCR1AL, temp						// Carga el byte bajo de OCR1A en la memoria
+000057 e00d                          ldi temp, (1 << WGM12) | (1 << CS12) | (1 << CS10)		// Modo CTC con prescaler de 1024
+000058 9300 0081                     sts TCCR1B, temp						// Configuración del Timer1 con prescaler 1024
+00005a e002                          ldi temp, (1 << OCIE1A)					// Se habilita la interrupción por comparación del Timer 1
+00005b 9300 006f                     sts TIMSK1, temp						// Se escribe el registro de máscara de interrupciones para el Timer 1
+                                 
+                                     // Configurar PCINT1 - Botones PC0-PC4
+00005d e002                          ldi temp, (1 << PCIE1)					// Se habilitan las insterrupciones por cambio del pin en el Puerto C
+00005e 9300 0068                     sts PCICR, temp							// Se escribe en el registro de control de interrupciones
+000060 e10f                          ldi temp, 0b00011111					// Se habilita PCINT para PC0 a PC4
+000061 9300 006c                     sts PCMSK1, temp						// Se escriba la máscara de pines a monitorear en Puerto C
+                                 
+                                     // Inicializar variables
+000063 e000                          ldi temp, 0x00							// Valor inicial es 0
+000064 9300 0100                     sts segundos, temp						// Inicialización de segundos en 0
+000066 9300 0101                     sts minutos, temp						// Inicialización de minutos en 0
+000068 9300 0102                     sts horas, temp							// Inicialización de horas en 0
+00006a 9300 0108                     sts cont_ms, temp						// Inicialización del contador de milisegundos en 0
+00006c 9300 0109                     sts cont_ms2, temp						// Inicialización del contador de milisegundos para la alarma en 0
+00006e 9300 0107                     sts alarma_activa, temp					// Inicialización de la bandera para activar la alarma en 0
+000070 9300 0105                     sts alarma_horas, temp					// Inicialización de hora de la alarma en 0
+000072 9300 0106                     sts alarma_minutos, temp				// Inicialización de minutos de la alarma en 0
+                                     
+                                     // Inicializar todos los digitos a 0
+000074 9300 010a                     sts digito0, temp						// Display 1 inicia mostrando 0
+000076 9300 010b                     sts digito1, temp						// Display 2 inicia mostrando 0
+000078 9300 010c                     sts digito2, temp						// Display 3 inicia mostrando 0
+00007a 9300 010d                     sts digito3, temp						// Display 4 inicia mostrando 0
+                                     
+00007c e001                          ldi temp, 1								// Valor inicial para dia y mes siendo 1
+00007d 9300 0103                     sts dia, temp							// Inicialización dia en 1
+00007f 9300 0104                     sts mes, temp							// Inicialización mes en 1
+                                 
+                                     // Inicializar registros
+000081 2799                          clr estado								// Estado inicial en 0 (para visualizar la hora)
+000082 2733                          clr en_config							// El reloj comienza a correr
+000083 2788                          clr disp_select							// Empieza el display 0 en el multiplexado
+000084 9478                          sei										// Habilita interrupciones globales 
+                                 
+                                 /****************************************/
+                                 // Loop Infinito
+                                 
+                                 MainLoop:
+000085 d001                          rcall Actualizar_Digitos				// Llama a la subrutina pata actualizar los digitos segun el modo actual
+000086 cffe                          rjmp  MainLoop							// Bucle principal
+                                 
+                                 /****************************************/
+                                 // NON-Interrupt subroutines
+                                 // Actualización de dígitos para los displays
+                                 Actualizar_Digitos:
+000087 3091                          cpi  estado, 1							// Compara estado 1 (fecha)
+000088 f0a1                          breq Mostrar_Fecha						// Si el estado == 1, salta a mostrar la fecha
+000089 3093                          cpi  estado, 3         					// Compara estado 3 (configuración de fecha)
+00008a f091                          breq Mostrar_Fecha      				// Si el estado == 3, salta a mostrar la fecha
+00008b 3094                          cpi  estado, 4							// Compara estado 4 configuración de alarma)
+00008c f0f9                          breq Mostrar_Alarma						// Si el estado == 4, salta a mostrar la alarma
+00008d c000                          rjmp Mostrar_Hora						// En los otros casos como estado 0 o 2, muestra la hora
+                                 
+                                 Mostrar_Hora:
+00008e 9100 0102                     lds     temp, horas						// Carga el valoor de horas desde la RAM
+000090 d02a                          rcall   Separar_Digitos					// Separa las decenas y las unidades 
+000091 9350 010a                     sts     digito0, r21					// Guarda decenas de hora en el Display 1
+000093 9360 010b                     sts     digito1, r22					// Guarda unidades de hora en el Display 2
+000095 9100 0101                     lds     temp, minutos					// Carga el valor de munutos desde la RAM
+000097 d023                          rcall   Separar_Digitos					// Guarda decenas de minuto en el Display 3
+000098 9350 010c                     sts     digito2, r21					// Guarda unidades de minuto en el Display 4
+00009a 9360 010d                     sts     digito3, r22					// Retorna
+00009c 9508                          ret
+                                 
+                                 Mostrar_Fecha:
+00009d 9100 0103                     lds     temp, dia						// Carga el valor del dia desde la RAM
+00009f d01b                          rcall   Separar_Digitos					// Separa las decenas y las unidades
+0000a0 9350 010a                     sts     digito0, r21					// Guarda decenas de dia en el Display 1
+0000a2 9360 010b                     sts     digito1, r22					// Guarda unidades de dia en el Display 2
+0000a4 9100 0104                     lds     temp, mes						// Carga el valor del mes desde la RAM
+0000a6 d014                          rcall   Separar_Digitos					// Separa las decenas y las unidades
+0000a7 9350 010c                     sts     digito2, r21					// Guarda decenas del mes en el Display 3
+0000a9 9360 010d                     sts     digito3, r22					// Guarda unidades del mes en el Display 4
+0000ab 9508                          ret										// Retorna
+                                 
+                                 Mostrar_Alarma:
+0000ac 9100 0105                     lds     temp, alarma_horas				// Carga el valor de la alarma desde la RAM
+0000ae d00c                          rcall   Separar_Digitos					// Separa las decenas y las unidades
+0000af 9350 010a                     sts     digito0, r21					// Guarda decenas de hora de alarma en el Display 1
+0000b1 9360 010b                     sts     digito1, r22					// Guarda unidades de hora de alarma en el Display 2
+0000b3 9100 0106                     lds     temp, alarma_minutos			// Carga el valor del mes desde la RAM
+0000b5 d005                          rcall   Separar_Digitos					// Separa las decenas y las unidades
+0000b6 9350 010c                     sts     digito2, r21					// Guarda decenas de minuto de alarma en el Display 3
+0000b8 9360 010d                     sts     digito3, r22					// Guarda unidades de minuto de alarma en el Display 4
+0000ba 9508                          ret										// Retorna
+                                 
+                                 // Separación de dígitos
+                                 Separar_Digitos:
+0000bb 2755                          clr     r21								// Inicializa el contador de decenas en 0
+                                 Sep_Loop:
+0000bc 300a                          cpi     temp, 10						// Compara el numero restante con 10
+0000bd f018                          brlo    Sep_Fin							// Si es menor que 10, ya esta las unidades en temo
+0000be 500a                          subi    temp, 10						// Resta 10 al numero (uya que equivale a extraer una decena)
+0000bf 9553                          inc     r21								// Incrementa el contador de decenas
+0000c0 cffb                          rjmp    Sep_Loop						// Repite hasta que temp sea menor que 10
+                                 Sep_Fin:
+0000c1 2f60                          mov     r22, temp						// El resto (osea 0 a 9) son las unidades
+0000c2 9508                          ret										// Retorna con decenas y unidades (en registros r21 y r22 respectivamente)
+                                 
+                                 /****************************************/
+                                 // Interrupt routines
+                                 // ISR Timer1 - Avance del reloj
+                                 TIM1_COMPA_ISR:				
+0000c3 930f                          push temp								// Guarda el registro temp en la pila
+0000c4 b70f                          in   temp, SREG							// Lee el registro de estado del procesador
+0000c5 930f                          push temp								// Guarda SREG en la pila para restaurarlo despues
+0000c6 934f                      	push r20								// Guarda r20 en la pila (usado para incrementar)
+0000c7 935f                      	push r21								// Guarda r21 en la píla (usado para incrementar)
+                                 											
+0000c8 2f03                          mov  temp, en_config     				// Copia la bandera de configuración a temp
+0000c9 2300                          tst  temp								// Verifica si la bandera es cero (osea si el reloj esta corriendo)
+0000ca f461                          brne Salir_T1							// Si en_config es distinto de 0, no avanza el tiempo
+                                 											
+0000cb 9100 0100                     lds  temp, segundos						// Se carga el valor actual de segundos desde la RAM
+0000cd 9503                          inc  temp								// Incrementa los segundos de 1 en 1
+0000ce 330c                          cpi  temp, 60							// Compara con 60 ya que es el limite de los segundos (indica overflow)
+0000cf f429                          brne Guardar_Seg						// Si no llega a 60, guarda y termina
+0000d0 2700                          clr  temp								// Si llego a 60, reinicia a 0 segundos
+0000d1 9300 0100                     sts  segundos, temp						// Guarda segundos en 0
+0000d3 d0da                          rcall Inc_Minutos						// Llama a la rutina de incremento de minutos 
+0000d4 c002                          rjmp Salir_T1							// Salta a la final de la ISR 
+                                 
+                                 Guardar_Seg:								
+0000d5 9300 0100                     sts  segundos, temp						// Guarda el nuevo valor de segundos en la RAM
+                                 
+                                 Salir_T1:
+0000d7 915f                          pop r21									// Restaura r21 desde la pila
+0000d8 914f                      	pop r20									// Restaura r20 desde la pila
+0000d9 910f                      	pop  temp								// Restaura el valor de SREG que se guardo
+0000da bf0f                          out  SREG, temp							// Restaura el registro de estado del procesador
+0000db 910f                          pop  temp								// Restaura el registro temp original 
+0000dc 9518                          reti									// Retorna de la interrupción y re-habilita las interrupciones
+                                 
+                                 // ISR Timer1 - Multiplexado de los displays
+                                 TIM0_COMPA_ISR:
+0000dd 930f                          push temp								// Guarda temp en la pila
+0000de b70f                          in   temp, SREG							// Lee el registro de estado
+0000df 930f                          push temp								// Guarda SREG en la pila
+0000e0 932f                          push num_a_mostrar						// Guarda el registro de digito actual
+0000e1 934f                          push r20								// Guarda r20 para operaciones de puerto
+0000e2 935f                          push r21								// Guarda r21 para el uso de máscara XOR
+                                 
+                                     // Apagar SOLO transistores (PD2-PD5)
+0000e3 b10b                          in   temp, PORTD						// Lee el estado actual del Puerto D
+0000e4 7c03                          andi temp, 0b11000011					// Apaga PD2 a PD5 
+0000e5 b90b                          out  PORTD, temp						// Escribe el resultado, desactiva todos los displays
+                                 
+                                     // Cargar digito segun display actual
+0000e6 3080                          cpi  disp_select, 0						// Compara el display actual con 0
+0000e7 f029                          breq ISR_D0								// Si es el Display 0, salta a cargarlo
+0000e8 3081                          cpi  disp_select, 1						// Compara con 1
+0000e9 f031                          breq ISR_D1								// Si es el Display 1, salta a cargarlo
+0000ea 3082                          cpi  disp_select, 2						// Compara con 2
+0000eb f039                          breq ISR_D2								// Si es el Display 2, salta a cargarlo
+0000ec c009                          rjmp ISR_D3								// Si es 3, carga el Display 3
+                                 
+                                 ISR_D0:
+0000ed 9120 010a                     lds  num_a_mostrar, digito0				// Carga el digito 0 en decenas de hora/dia al mostrarlo
+0000ef c008                          rjmp ISR_Enviar							// Salta a enviar el digito a los puertos
+                                 
+                                 ISR_D1:
+0000f0 9120 010b                     lds  num_a_mostrar, digito1				// Carga el digito 1 en unidades de hora/dia al mostrarlo
+0000f2 c005                          rjmp ISR_Enviar							// Salta a enviar el digito a los puertos
+                                 
+                                 ISR_D2:
+0000f3 9120 010c                     lds  num_a_mostrar, digito2				// Carga el digito 2 en decenas de minutos/mes al mostrarlo
+0000f5 c002                          rjmp ISR_Enviar							// Salta a enviar el digito a los puertos
+                                 
+                                 ISR_D3:
+0000f6 9120 010d                     lds  num_a_mostrar, digito3				// Carga el digito 3 en unidades minutos/mes al mostrarlo
+                                 
+                                 ISR_Enviar:
+0000f8 d041                          rcall Enviar_a_Puertos					// Llama a la subrutina para enviar las señales a los degmentos del display
+                                 
+                                     // Activar transistor correspondiente
+0000f9 3080                          cpi  disp_select, 0						// Verifica si el display actual esta es el 0
+0000fa f029                          breq ISR_T1								// Si es 0, activa el transistor del Display 1
+0000fb 3081                          cpi  disp_select, 1						// Verifica si el display actual esta es el 1
+0000fc f029                          breq ISR_T2								// Si es 0, activa el transistor del Display 2 
+0000fd 3082                          cpi  disp_select, 2						// Verifica si el display actual esta es el 2 
+0000fe f029                          breq ISR_T3								// Si es 0, activa el transistor del Display 3
+0000ff c006                          rjmp ISR_T4								// Si es 3, activa el transistor del Display 4
+                                 
+                                 ISR_T1:
+000100 9a5d                          sbi  PORTD, 5							// Activa PD5, enciende el transistor del Display 1
+000101 c005                          rjmp ISR_Fin							// Salta al final del manjeo de transistores
+                                 
+                                 ISR_T2:
+000102 9a5c                          sbi  PORTD, 4							// Activa PD4, enciende el transistor del Display 1
+000103 c003                          rjmp ISR_Fin							// Salta al final del manjeo de transistores
+                                 
+                                 ISR_T3:
+000104 9a5b                          sbi  PORTD, 3							// Activa PD3, enciende el transistor del Display 1
+000105 c001                          rjmp ISR_Fin							// Salta al final del manjeo de transistores
+                                 
+                                 ISR_T4:
+000106 9a5a                          sbi  PORTD, 2							// Activa PD2, se enciende el transistor del Display 4
+                                 
+                                 ISR_Fin:
+                                     // Avanzar display
+000107 9583                          inc  disp_select						// Incrementa el indice del display activo
+000108 7083                          andi disp_select, 0x03					// Mantiene el valor en rango de 0 a 3 
+                                 
+                                     // Parpadeo PB5 segun estado
+000109 9100 0108                     lds  temp, cont_ms						// Carga el contador de milisegundos del parpadeo
+00010b 9503                          inc  temp								// Incrementa el contador en 1
+                                 
+00010c 3094                          cpi  estado, 4							// Verifica si el estado es 4 (el de la alarma)
+00010d f051                          breq Chk_Rapido							// Si es estado 4, usa parpadeo rápido-
+                                 
+                                 Chk_Lento:
+00010e 3c08                          cpi  temp, 200							// Verifica si han pasado 200ms 
+00010f f489                          brne Guardar_Cont						// Si no llegamos a 200ms, guarda y continua 
+000110 2700                          clr  temp								// Reincia el contador de milisegundos
+000111 3092                          cpi  estado, 2							// Verifica si el estado es menor que 2 (modo normal)
+000112 f068                          brlo LED_Fijo							// Si estado es menor a 2, el Led permanece fijo (indicado fecha u hora)
+000113 b145                          in   r20, PORTB							// Lee el estado actual del Puerto B
+000114 e250                          ldi  r21, (1 << PB5)					// Prepara mascara para el bit PB5 
+000115 2745                          eor  r20, r21							// Alterna el bit PB5
+000116 b945                          out  PORTB, r20							// Escribe el nuevo estado con PB5 alternado
+000117 c009                          rjmp Guardar_Cont						// Salta a guardar el contador
+                                 
+                                 Chk_Rapido:
+000118 310e                          cpi  temp, 30							// Verifica si han pasado 30 ms (parpadeo rápido para el arma)
+000119 f439                          brne Guardar_Cont						// Si no, guarda y continua 
+00011a 2700                          clr  temp								// Reinicia el contador
+00011b b145                          in   r20, PORTB							// Lee el estado del Puerto B
+00011c e250                          ldi  r21, (1 << PB5)					// Prepara mascara para PB5
+00011d 2745                          eor  r20, r21							// Alterna el LED dos puntos rapidamente
+00011e b945                          out  PORTB, r20							// Escribe el nuevo estado
+00011f c001                          rjmp Guardar_Cont						// Salta a guardar el contador
+                                 
+                                 LED_Fijo:
+000120 9a2d                          sbi  PORTB, 5							// Enciende el LED PB5 de forma fija
+                                 
+                                 Guardar_Cont:
+000121 9300 0108                     sts  cont_ms, temp						// Guarda el contador de ms actualizado en la RAM
+                                 											
+000123 d007                          rcall Parpadeo_LEDs_Alarma				// Llama a la rutina de parpadeo de LEDs de la alarma
+                                 											
+000124 915f                          pop  r21								// Restaura r21 desde la pila
+000125 914f                          pop  r20								// Restaura r20 desde la pila
+000126 912f                          pop  num_a_mostrar						// Restaura la variable de numero a mostrar desde la pila
+000127 910f                          pop  temp								// Recupera el valor de SREG guardado
+000128 bf0f                          out  SREG, temp							// Restaura el registro de estado
+000129 910f                          pop  temp								// Restaura temp original
+00012a 9518                          reti									// Retorna de la interrupción
+                                 
+                                 // Parpadeo de los LEDs del reloj
+                                 Parpadeo_LEDs_Alarma:
+00012b 3094                          cpi  estado, 4							// Verifica si el estado actual es 4 (configuracion de alarma)
+00012c f461                          brne Salir_Parpadeo						// Si no es estado 4, sale sin hacer nada
+                                 											
+00012d 9100 0109                     lds  temp, cont_ms2						// Carga el segundo contador de ms
+00012f 9503                          inc  temp								// Lo incrementa
+000130 370d                          cpi  temp, 125							// Verifica si han pasado 125ms
+000131 f429                          brne Guardar_ms2						// Si no, solo guarda el contador actualizado
+000132 2700                          clr  temp								// Reinicia el contador al llegar a 125ms
+000133 b14b                          in   r20, PORTD							// Lee el estado actual del Puerto D
+000134 e053                          ldi  r21, (1 << PD0) | (1 << PD1)		// Mascara para los bits PD0 y PD1
+000135 2745                          eor  r20, r21							// Alterna (toggle) PD0 y PD1 simultaneamente
+000136 b94b                          out  PORTD, r20							// Escribe el nuevo estado en el Puerto D
+                                 
+                                 Guardar_ms2:
+000137 9300 0109                     sts  cont_ms2, temp						// Guarda el contador de ms2 actualizado en RAM
+                                 Salir_Parpadeo:
+000139 9508                          ret										// Retorna al llamador
+                                 
+                                 // Digitos a mostrar en los displays
+                                 Enviar_a_Puertos:
+                                     // Asegurar que el dígito está en rango 0-9
+00013a 302a                          cpi  num_a_mostrar, 10					// Verifica que el digito sea valido 
+00013b f018                          brlo Enviar_Seguro      				// Si es menor que 10, procede normalmente
+00013c e020                          ldi  num_a_mostrar, 0   				// Si es menor o igual a 10 es invalido, fuerza a mostrar 0 por seguridad
+00013d b90b                      	out PORTD, temp							// Limpia el puerto D 
+00013e 9508                      	ret										// Sale sin continuar
+                                     
+                                 Enviar_Seguro:
+                                     // Cargar la dirección base de la tabla (multiplicada por 2 para bytes)
+00013f e0f0                          ldi  ZH, high(Tabla7Seg << 1)			// Carga la´parte alta de la dirección de la tabla en ZH	
+000140 e6e8                          ldi  ZL, low(Tabla7Seg << 1)			// Carga la´parte baja de la dirección de la tabla en ZL
+                                     
+                                     // Sumar el índice (num_a_mostrar) al puntero Z de 16 bits
+000141 0fe2                          add  ZL, num_a_mostrar					// Suma el indice al byte bajo del puntero Z
+000142 2700                          clr  temp               				// Limpia temp para usarlo como carry
+000143 1ff0                          adc  ZH, temp           				// Propaga el acarreo al byte alto de Z si ZL se desbordó
+                                     
+                                     // Leer el valor de la tabla
+000144 9144                          lpm  r20, Z								// Lee el byte de la tabla de 7 segmentos
+                                 
+000145 2755                          clr  r21								// Limpia r21 para construir el valor a escribir en PORTB
+000146 fb40                          bst  r20, 0  							// Extrae el bit 0 de r20 en el flag T
+000147 f954                          bld r21, 4   							// Deposita el flag T en el bit 4 de r21 (PB4 = seg A)
+000148 fb41                          bst  r20, 1  							// Extrae el bit 1 en T
+000149 f953                          bld r21, 3    							// Deposita en bit 3 de r21 (PB3 = seg B)
+00014a fb42                          bst  r20, 2  							// Extrae el bit 2 en T
+00014b f952                          bld r21, 2    							// Deposita en bit 2 de r21 (PB2 = seg C)
+00014c fb43                          bst  r20, 3  							// Extrae el bit 3 en T
+00014d f951                          bld r21, 1    							// Deposita en bit 1 de r21 (PB1 = seg D)
+00014e fb44                          bst  r20, 4  							// Extrae el bit 4 en T
+00014f f950                          bld r21, 0    							// Deposita en bit 0 de r21 (PB0 = seg E)
+                                 
+000150 b105                          in   temp, PORTB						// Lee el estado actual de PORTB
+000151 7e00                          andi temp, 0b11100000        			// Conserva solo los bits PB5-PB7 (LED dos puntos y otros)
+000152 2b05                          or   temp, r21							// Combina con los nuevos valores de segmentos A-E
+000153 b905                          out  PORTB, temp						// Escribe el resultado final en PORTB
+                                 											
+000154 2766                          clr  r22								// Limpia r22 para construir el valor a escribir en PORTD
+000155 fb45                          bst  r20, 5  							// Extrae el bit 5 de r20 (segmento F) en T
+000156 f967                          bld r22, 7     							// Deposita en bit 7 de r22 (PD7 = seg F)
+000157 fb46                          bst  r20, 6  							// Extrae el bit 6 (segmento G) en T
+000158 f966                          bld r22, 6     							// Deposita en bit 6 de r22 (PD6 = seg G)
+                                 											
+000159 b10b                          in   temp, PORTD						// Lee el estado actual de PORTD
+00015a 730f                      	andi temp, 0b00111111    				// Limpia solo los bits PD7 y PD6 (segmentos F y G)
+00015b 2b06                      	or   temp, r22           				// Combina con los nuevos valores de seg F y G
+00015c b90b                      	out  PORTD, temp						// Escribe el resultado final en PORTD y retorna (sin ret explicito)
+                                 
+                                 PCI1_ISR:
+00015d 930f                          push temp								// Guarda temp en la pila						
+00015e b70f                          in   temp, SREG							// Lee el registro de estado
+00015f 930f                          push temp								// Guarda SREG
+000160 934f                          push r20								// Guarda r20
+                                 
+000161 b106                          in   temp, PINC							// Lee el estado actual de los pines del Puerto C (botones)
+                                 
+000162 fd04                          sbrc temp, 4             				// Salta si el bit 4 esta limpio (PC4 presionado = 0)
+000163 c003                          rjmp Chk_PC0							// Si PC4 NO esta presionado, revisa el siguiente boton
+000164 d02e                          rcall Cambiar_Estado					// PC4 presionado: cambia el modo/estado del reloj
+000165 d019                          rcall Esperar_Soltar_PC4				// Espera a que se suelte el boton PC4
+000166 c013                          rjmp Fin_PCI1							// Termina el manejo de la interrupcion
+                                 
+                                 Chk_PC0:
+000167 fd00                          sbrc temp, 0             				// Salta si el bit 0 esta limpio (PC0 presionado = 0)
+000168 c003                          rjmp Chk_PC1							// Si PC0 NO esta presionado, revisa el siguiente
+000169 d090                          rcall Accion_Up_D1						// PC0 presionado: incrementa el primer par de digitos
+00016a d018                          rcall Esperar_Soltar_PC0				// Espera a que se suelte PC0
+00016b c00e                          rjmp Fin_PCI1
+                                 
+                                 Chk_PC1:
+00016c fd01                          sbrc temp, 1             				// Salta si PC1 esta limpio (presionado)
+00016d c003                          rjmp Chk_PC2							// Si no esta presionado, revisa el siguiente
+00016e d0b0                          rcall Accion_Down_D1					// PC1 presionado: decrementa el primer par de digitos
+00016f d017                          rcall Esperar_Soltar_PC1				// Espera a que se suelte PC1
+000170 c009                          rjmp Fin_PCI1
+                                 
+                                 Chk_PC2:
+000171 fd02                          sbrc temp, 2             				// Salta si PC2 esta limpio (presionado)
+000172 c003                          rjmp Chk_PC3							// Si no esta presionado, revisa el siguiente
+000173 d0d1                          rcall Accion_Up_D2						// PC2 presionado: incrementa el segundo par de digitos
+000174 d016                          rcall Esperar_Soltar_PC2				// Espera a que se suelte PC2
+000175 c004                          rjmp Fin_PCI1
+                                 
+                                 Chk_PC3:
+000176 fd03                          sbrc temp, 3             				// Salta si PC3 esta limpio (presionado)
+000177 c002                          rjmp Fin_PCI1							// Si PC3 NO esta presionado, no hay accion (sale)
+000178 d0ee                          rcall Accion_Down_D2					// PC3 presionado: decrementa el segundo par de digitos
+000179 d015                          rcall Esperar_Soltar_PC3				// Espera a que se suelte PC3
+                                 
+                                 Fin_PCI1:
+00017a 914f                          pop  r20								// Restaura r20
+00017b 910f                          pop  temp								// Recupera SREG guardado
+00017c bf0f                          out  SREG, temp							// Restaura el registro de estado
+00017d 910f                          pop  temp								// Restaura temp
+00017e 9518                          reti									// Retorna de la interrupcion
+                                 
+                                 // Espera para la verificacion de los botones
+                                 Esperar_Soltar_PC4:
+00017f b106                          in   temp, PINC							// Lee el estado de los pines del Puerto C
+000180 ff04                          sbrs temp, 4							// Salta si el bit 4 esta en 1 (boton suelto)
+000181 cffd                          rjmp Esperar_Soltar_PC4					// Si sigue en 0 (presionado), espera en bucle
+000182 9508                          ret										// El boton fue soltado, retorna
+                                 											
+                                 Esperar_Soltar_PC0:							
+000183 b106                          in   temp, PINC							// Lee los pines del Puerto C
+000184 ff00                          sbrs temp, 0							// Salta si PC0 esta en 1 (suelto)
+000185 cffd                          rjmp Esperar_Soltar_PC0					// Si sigue presionado, espera
+000186 9508                          ret										
+                                 											
+                                 Esperar_Soltar_PC1:							
+000187 b106                          in   temp, PINC							// Lee los pines del Puerto C
+000188 ff01                          sbrs temp, 1							// Salta si PC1 esta en 1 (suelto)
+000189 cffd                          rjmp Esperar_Soltar_PC1					// Si sigue presionado, espera
+00018a 9508                          ret										
+                                 											
+                                 Esperar_Soltar_PC2:						
+00018b b106                          in   temp, PINC							// Lee los pines del Puerto C
+00018c ff02                          sbrs temp, 2							// Salta si PC2 esta en 1 (suelto)
+00018d cffd                          rjmp Esperar_Soltar_PC2					// Si sigue presionado, espera
+00018e 9508                          ret										
+                                 											
+                                 Esperar_Soltar_PC3:							
+00018f b106                          in   temp, PINC							// Lee los pines del Puerto C
+000190 ff03                          sbrs temp, 3							// Salta si PC3 esta en 1 (suelto)
+000191 cffd                          rjmp Esperar_Soltar_PC3					// Si sigue presionado, espera
+000192 9508                          ret
+                                 
+                                 // Cambios de estado del reloj
+                                 Cambiar_Estado:
+                                     ; Primero verificar si la alarma esta sonando
+000193 9100 0107                     lds  temp, alarma_activa
+000195 3001                          cpi  temp, 1
+000196 f429                          brne Modo_Normal
+                                 
+                                     ; Si esta sonando -> apagarla y NO cambiar estado
+000197 2700                          clr  temp
+000198 9300 0107                     sts  alarma_activa, temp
+00019a 9845                          cbi  PORTC, 5
+00019b 9508                          ret
+                                 
+                                 Modo_Normal:
+00019c 9593                          inc  estado
+00019d 3095                          cpi  estado, 5
+00019e f008                          brlo Est_Config_Check
+00019f 2799                          clr  estado
+                                 										
+                                 Est_Config_Check:						
+                                     // Estados 2,3,4 pausan el reloj	
+0001a0 3092                          cpi  estado, 2							// Verifica si el estado es 2 o mayor
+0001a1 f410                          brsh Est_Pausar							// Si estado >= 2, pausa el reloj
+0001a2 2733                          clr  en_config							// Estado 0 o 1: reloj corre (en_config = 0)
+0001a3 c002                          rjmp Actualizar_LEDs					// Actualiza los LEDs indicadores
+                                 Est_Pausar:									//
+0001a4 e031                          ldi  en_config, 1						// Pausa el reloj (en_config = 1)
+0001a5 c000                      	rjmp Actualizar_LEDs					// Actualiza los LEDs indicadores
+                                 											
+                                 Actualizar_LEDs:							
+0001a6 3092                          cpi  estado, 2							// Verifica si el estado es 2 o mayor
+0001a7 f410                          brsh LED_Parpadeo    					// Si estado >= 2, activa el parpadeo del LED
+                                     // Estados 0,1 -> encendido fijo
+0001a8 9a2d                          sbi  PORTB, 5							// Enciende el LED dos puntos de forma fija
+0001a9 9508                          ret
+                                 LED_Parpadeo:
+                                     // El parpadeo lo maneja Timer0, solo Setupear contador
+0001aa 2700                          clr  temp								// Limpia temp
+0001ab 9300 0108                     sts  cont_ms, temp						// Reinicia el contador de ms para empezar el parpadeo desde cero
+0001ad 9508                          ret
+                                 
+                                 // Rutinas de incremento desde el Timer 1
+                                 Inc_Minutos:
+0001ae 9100 0101                     lds  temp, minutos						// Carga el valor actual de minutos
+0001b0 9503                          inc  temp								// Incrementa los minutos
+0001b1 330c                          cpi  temp, 60							// Compara con el limite de 60 minutos
+0001b2 f431                          brne Guardar_IMin						// Si no llego a 60, guarda el nuevo valor
+0001b3 2700                          clr  temp								// Si llego a 60, reinicia a 0
+0001b4 9300 0101                     sts  minutos, temp						// Guarda minutos = 0 en RAM
+0001b6 d006                          rcall Inc_Horas							// Llama a incrementar las horas
+0001b7 d012                      	rcall Verificar_Alarma 
+0001b8 9508                          ret
+                                 Guardar_IMin:
+0001b9 9300 0101                     sts  minutos, temp						// Guarda el nuevo valor de minutos en RAM
+0001bb d00e                      	rcall Verificar_Alarma 
+0001bc 9508                          ret
+                                 
+                                 Inc_Horas:
+0001bd 9100 0102                     lds  temp, horas						// Carga el valor actual de horas
+0001bf 9503                          inc  temp								// Incrementa las horas
+0001c0 3108                          cpi  temp, 24							// Compara con el limite de 24 horas
+0001c1 f429                          brne Guardar_IHor						// Si no llego a 24, guarda el nuevo valor
+0001c2 2700                          clr  temp								// Si llego a 24, reinicia a 0 
+0001c3 9300 0102                     sts  horas, temp						// Guarda horas = 0
+0001c5 d01b                          rcall Inc_Dia							// Llama a incrementar el dia
+0001c6 9508                          ret
+                                 Guardar_IHor:
+0001c7 9300 0102                     sts  horas, temp						// Guarda el nuevo valor de horas en RAM
+0001c9 9508                          ret
+                                 
+                                 // Verificar alarma 
+                                 Verificar_Alarma:
+0001ca 9140 0102                     lds  r20, horas
+0001cc 9150 0105                     lds  r21, alarma_horas
+0001ce 1745                          cp   r20, r21
+0001cf f459                          brne Alarma_No
+0001d0 9140 0101                     lds  r20, minutos
+0001d2 9150 0106                     lds  r21, alarma_minutos
+0001d4 1745                          cp   r20, r21
+0001d5 f429                          brne Alarma_No
+                                     // Hora y minutos coinciden: activar buzzer
+0001d6 e001                          ldi  temp, 1
+0001d7 9300 0107                     sts  alarma_activa, temp
+0001d9 9a45                          sbi  PORTC, 5
+0001da 9508                          ret
+                                 Alarma_No:
+0001db 9100 0107                     lds  temp, alarma_activa
+0001dd 3001                          cpi  temp, 1
+0001de f009                          breq Mantener_Buzzer     ; Si alarma sigue activa, mantener buzzer
+0001df 9845                          cbi  PORTC, 5            ; Si no, apagar
+                                 Mantener_Buzzer:
+0001e0 9508                          ret										// Retorna a llamador
+                                 
+                                 Inc_Dia:
+0001e1 9140 0103                     lds  r20, dia							// Carga el dia actual
+0001e3 9150 0104                     lds  r21, mes							// Carga el mes actual (necesario para saber cuantos dias tiene)
+0001e5 9543                          inc  r20								// Incrementa el dia
+0001e6 d0a2                          rcall Dias_Del_Mes						// Obtiene el maximo de dias del mes actual en r22
+0001e7 1746                          cp   r20, r22							// Compara el nuevo dia con el maximo + 1
+0001e8 f028                          brlo Guardar_IDia						// Si es menor, el dia es valido, lo guarda
+0001e9 e041                          ldi  r20, 1								// Si supera el maximo, reinicia el dia a 1
+0001ea 9340 0103                     sts  dia, r20							// Guarda dia = 1 en RAM
+0001ec d004                          rcall Inc_Mes							// Llama a incrementar el mes
+0001ed 9508                          ret
+                                 Guardar_IDia:
+0001ee 9340 0103                     sts  dia, r20							// Guarda el nuevo valor de dia en RAM
+0001f0 9508                          ret
+                                 
+                                 Inc_Mes:
+0001f1 9100 0104                     lds  temp, mes							// Carga el mes actual
+0001f3 9503                          inc  temp								// Incrementa el mes
+0001f4 300d                          cpi  temp, 13							// Compara con 13 (limite: el mes 13 no existe)
+0001f5 f008                          brlo Guardar_IMes						// Si es menor que 13, el mes es valido
+0001f6 e001                          ldi  temp, 1							// Si llego a 13, reinicia a enero 
+                                 Guardar_IMes:
+0001f7 9300 0104                     sts  mes, temp							// Guarda el nuevo mes en RAM
+0001f9 9508                          ret
+                                 
+                                 // Acciones de up/down segun el estado actual
+                                 Accion_Up_D1:
+0001fa 3092                          cpi  estado, 2							// Verifica si estamos en modo configurar hora
+0001fb f029                          breq Up_Horas							// Si si, incrementa las horas
+0001fc 3093                          cpi  estado, 3							// Verifica si estamos en modo configurar fecha
+0001fd f061                          breq Up_Dias							// Si si, incrementa el dia
+0001fe 3094                          cpi  estado, 4							// Verifica si estamos en modo configurar alarma
+0001ff f0b1                          breq Up_Alarma_Hora						// Si si, incrementa la hora de alarma
+000200 9508                          ret										// En otro estado, no hace nada
+                                 
+                                 Up_Horas:
+000201 9100 0102                     lds  temp, horas						// Carga el valor actual de horas
+000203 9503                          inc  temp								// Incrementa las horas
+000204 3108                          cpi  temp, 24							// Verifica el limite de 24 horas
+000205 f008                          brlo Guardar_Up_Hora					// Si es menor que 24, guarda directamente
+000206 2700                          clr  temp								// Si llego a 24, reinicia a 0
+                                 
+                                 Guardar_Up_Hora:
+000207 9300 0102                     sts  horas, temp						// Guarda las horas actualizadas en RAM
+000209 9508                          ret
+                                 
+                                 Up_Dias:
+00020a 9140 0103                     lds  r20, dia							// Carga el dia actual
+00020c 9150 0104                     lds  r21, mes							// Carga el mes actual
+00020e 9543                          inc  r20								// Incrementa el dia
+00020f d079                          rcall Dias_Del_Mes						// Obtiene el maximo de dias del mes en r22
+000210 1746                          cp   r20, r22							// Compara con el maximo + 1
+000211 f008                          brlo Guardar_Up_Dia						// Si es valido, lo guarda
+000212 e041                          ldi  r20, 1								// Si supera el maximo, vuelve al dia 1
+                                 Guardar_Up_Dia:
+000213 9340 0103                     sts  dia, r20							// Guarda el dia actualizado en RAM
+000215 9508                          ret
+                                 
+                                 Up_Alarma_Hora:
+000216 9100 0105                     lds  temp, alarma_horas					// Carga la hora de alarma actual
+000218 9503                          inc  temp								// Incrementa la hora de alarma
+000219 3108                          cpi  temp, 24							// Verifica el limite de 24 horas
+00021a f008                          brlo Guardar_Up_AH						// Si es valido, guarda
+00021b 2700                          clr  temp								// Si llego a 24, reinicia a 0
+                                 Guardar_Up_AH:
+00021c 9300 0105                     sts  alarma_horas, temp					// Guarda la hora de alarma actualizada en RAM
+00021e 9508                          ret
+                                 
+                                 Accion_Down_D1:
+00021f 3092                          cpi  estado, 2							// Verifica modo configurar hora
+000220 f029                          breq Down_Horas							// Si es modo 2, decrementa horas
+000221 3093                          cpi  estado, 3							// Verifica modo configurar fecha
+000222 f061                          breq Down_Dias							// Si es modo 3, decrementa dia
+000223 3094                          cpi  estado, 4							// Verifica modo configurar alarma
+000224 f0b9                          breq Down_Alarma_Hora					// Si es modo 4, decrementa hora de alarma
+000225 9508                          ret										// En otro estado, no hace nada
+                                 
+                                 Down_Horas:
+000226 9100 0102                     lds  temp, horas						// Carga las horas actuales
+000228 950a                          dec  temp								// Decrementa las horas
+000229 3f0f                          cpi  temp, 0xFF							// Verifica si hubo underflow (0 - 1 = 0xFF en byte sin signo)
+00022a f409                          brne Guardar_Down_Hora					// Si no hay underflow, guarda directamente
+00022b e107                          ldi  temp, 23							// Si hay underflow, ajusta a 23 (ciclo circular)
+                                 Guardar_Down_Hora:
+00022c 9300 0102                     sts  horas, temp						// Guarda las horas actualizadas en RAM
+00022e 9508                          ret
+                                 
+                                 Down_Dias:
+00022f 9140 0103                     lds  r20, dia							// Carga el dia actual
+000231 9150 0104                     lds  r21, mes							// Carga el mes actual
+000233 954a                          dec  r20								// Decrementa el dia
+000234 3040                          cpi  r20, 0								// Verifica si llego a 0 (invalido)
+000235 f419                          brne Guardar_Down_Dia					// Si no, guarda directamente
+000236 d052                          rcall Dias_Del_Mes						// Si llego a 0, obtiene el maximo del mes para ciclo circular
+000237 956a                          dec  r22								// El maximo real es r22 - 1 (porque la funcion retorna max+1)
+000238 2f46                          mov  r20, r22							// Copia el ultimo dia valido del mes a r20
+                                 Guardar_Down_Dia:
+000239 9340 0103                     sts  dia, r20							// Guarda el dia actualizado en RAM
+00023b 9508                          ret
+                                 
+                                 Down_Alarma_Hora:
+00023c 9100 0105                     lds  temp, alarma_horas					// Carga la hora de alarma actual
+00023e 950a                          dec  temp								// Decrementa la hora de alarma
+00023f 3f0f                          cpi  temp, 0xFF							// Verifica underflow
+000240 f409                          brne Guardar_Down_AH					// Si no hay underflow, guarda
+000241 e107                          ldi  temp, 23							// Si hay underflow, ajusta a 23
+                                 Guardar_Down_AH:
+000242 9300 0105                     sts  alarma_horas, temp					// Guarda la hora de alarma actualizada en RAM
+000244 9508                          ret
+                                 
+                                 Accion_Up_D2:
+000245 3092                          cpi  estado, 2							// Verifica modo configurar hora
+000246 f029                          breq Up_Minutos							// Si es modo 2, incrementa minutos
+000247 3093                          cpi  estado, 3							// Verifica modo configurar fecha
+000248 f061                          breq Up_Mes								// Si es modo 3, incrementa mes
+000249 3094                          cpi  estado, 4							// Verifica modo configurar alarma
+00024a f099                          breq Up_Alarma_Min						// Si es modo 4, incrementa minutos de alarma
+00024b 9508                          ret										// En otro estado, no hace nada
+                                 
+                                 Up_Minutos:
+00024c 9100 0101                     lds  temp, minutos						// Carga los minutos actuales
+00024e 9503                          inc  temp								// Incrementa los minutos
+00024f 330c                          cpi  temp, 60							// Verifica el limite de 60
+000250 f008                          brlo Guardar_Up_Min						// Si es valido, guarda
+000251 2700                          clr  temp								// Si llego a 60, reinicia a 0
+                                 Guardar_Up_Min:
+000252 9300 0101                     sts  minutos, temp						// Guarda los minutos actualizados en RAM
+000254 9508                          ret
+                                 
+                                 Up_Mes:
+000255 9100 0104                     lds  temp, mes							// Carga el mes actual
+000257 9503                          inc  temp								// Incrementa el mes
+000258 300d                          cpi  temp, 13							// Verifica el limite (mes 13 no existe)
+000259 f008                          brlo Guardar_Up_Mes						// Si es valido (1-12), guarda
+00025a e001                          ldi  temp, 1							// Si llego a 13, reinicia a enero
+                                 Guardar_Up_Mes:
+00025b 9300 0104                     sts  mes, temp							// Guarda el mes actualizado en RAM
+00025d 9508                          ret
+                                 
+                                 Up_Alarma_Min:
+00025e 9100 0106                     lds  temp, alarma_minutos				// Carga los minutos de alarma actuales
+000260 9503                          inc  temp								// Incrementa los minutos de alarma
+000261 330c                          cpi  temp, 60							// Verifica el limite
+000262 f008                          brlo Guardar_Up_AM						// Si es valido, guarda
+000263 2700                          clr  temp								// Si llego a 60, reinicia a 0
+                                 Guardar_Up_AM:
+000264 9300 0106                     sts  alarma_minutos, temp				// Guarda los minutos de alarma actualizados en RAM
+000266 9508                          ret
+                                 
+                                 Accion_Down_D2:
+000267 3092                          cpi  estado, 2							// Verifica modo configurar hora
+000268 f029                          breq Down_Minutos						// Si es modo 2, decrementa minutos
+000269 3093                          cpi  estado, 3							// Verifica modo configurar fecha
+00026a f061                          breq Down_Mes							// Si es modo 3, decrementa mes
+00026b 3094                          cpi  estado, 4							// Verifica modo configurar alarma
+00026c f099                          breq Down_Alarma_Min					// Si es modo 4, decrementa minutos de alarma
+00026d 9508                          ret										// En otro estado, no hace nada
+                                 
+                                 Down_Minutos:
+00026e 9100 0101                     lds  temp, minutos						// Carga los minutos actuales
+000270 950a                          dec  temp								// Decrementa los minutos
+000271 3f0f                          cpi  temp, 0xFF							// Verifica underflow
+000272 f409                          brne Guardar_Down_Min					// Si no hay underflow, guarda directamente
+000273 e30b                          ldi  temp, 59							// Si hay underflow, ajusta a 59 (ciclo circular)
+                                 Guardar_Down_Min:
+000274 9300 0101                     sts  minutos, temp						// Guarda los minutos actualizados en RAM
+000276 9508                          ret
+                                 
+                                 Down_Mes:
+000277 9100 0104                     lds  temp, mes							// Carga el mes actual
+000279 950a                          dec  temp								// Decrementa el mes
+00027a 3000                          cpi  temp, 0							// Verifica si llego a 0 (invalido)
+00027b f409                          brne Guardar_Down_Mes					// Si no, guarda directamente
+00027c e00c                          ldi  temp, 12							// Si llego a 0, ajusta a diciembre (mes 12)
+                                 Guardar_Down_Mes:
+00027d 9300 0104                     sts  mes, temp							// Guarda el mes actualizado en RAM
+00027f 9508                          ret
+                                 
+                                 Down_Alarma_Min:
+000280 9100 0106                     lds  temp, alarma_minutos				// Carga los minutos de alarma actuales
+000282 950a                          dec  temp								// Decrementa los minutos de alarma
+000283 3f0f                          cpi  temp, 0xFF							// Verifica underflow
+000284 f409                          brne Guardar_Down_AM					// Si no hay underflow, guarda
+000285 e30b                          ldi  temp, 59							// Si hay underflow, ajusta a 59
+                                 Guardar_Down_AM:
+000286 9300 0106                     sts  alarma_minutos, temp				// Guarda los minutos de alarma actualizados en RAM
+000288 9508                          ret
+                                 
+                                 // Dias del mes (para determinar en la configuración de la fecha)
+                                 Dias_Del_Mes:
+000289 3052                          cpi  r21, 2								// Verifica si el mes es febrero (mes 2)
+00028a f051                          breq DDM_Feb							// Si es febrero, salta a ese caso
+00028b 3054                          cpi  r21, 4								// Verifica si es abril
+00028c f051                          breq DDM_30								// Abril tiene 30 dias
+00028d 3056                          cpi  r21, 6								// Verifica si es junio
+00028e f041                          breq DDM_30								// Junio tiene 30 dias
+00028f 3059                          cpi  r21, 9								// Verifica si es septiembre
+000290 f031                          breq DDM_30								// Septiembre tiene 30 dias
+000291 305b                          cpi  r21, 11							// Verifica si es noviembre
+000292 f021                          breq DDM_30								// Noviembre tiene 30 dias
+000293 e260                          ldi  r22, 32             				// Todos los demas meses tienen 31 dias (retorna 32 = 31+1)
+000294 9508                          ret
+                                 
+                                 DDM_Feb:
+000295 e16d                          ldi  r22, 29							// Febrero tiene 28 dias 
+000296 9508                          ret
+                                 
+                                 DDM_30:
+000297 e16f                          ldi  r22, 31							// Meses de 30 días 
+
+
+RESOURCE USE INFORMATION
+------------------------
+
+Notice:
+The register and instruction counts are symbol table hit counts,
+and hence implicitly used resources are not counted, eg, the
+'lpm' instruction without operands implicitly uses r0 and z,
+none of which are counted.
+
+x,y,z are separate entities in the symbol table and are
+counted separately from r26..r31 here.
+
+.dseg memory usage only counts static data declared with .byte
+
+"ATmega328P" register use summary:
+x  :   0 y  :   0 z  :   1 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
+r13:   0 r14:   0 r15:   0 r16: 205 r17:   0 r18:   9 r19:   4 r20:  43 
+r21:  37 r22:  18 r23:   0 r24:   9 r25:  24 r26:   0 r27:   0 r28:   0 
+r29:   0 r30:   2 r31:   2 
+Registers used: 11 out of 35 (31.4%)
+
+"ATmega328P" instruction use summary:
+.lds  :   0 .sts  :   0 adc   :   1 add   :   1 adiw  :   0 and   :   0 
+andi  :   4 asr   :   0 bclr  :   0 bld   :   7 brbc  :   0 brbs  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :  28 brge  :   0 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :  12 brlt  :   0 brmi  :   0 
+brne  :  17 brpl  :   0 brsh  :   2 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   7 call  :   0 cbi   :   2 cbr   :   0 
+clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :  22 cls   :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   4 cpc   :   0 
+cpi   :  54 cpse  :   0 dec   :   7 eor   :   3 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :  15 inc   :  16 jmp   :   0 
+ld    :   0 ldd   :   0 ldi   :  38 lds   :  38 lpm   :   2 lsl   :   0 
+lsr   :   0 mov   :   3 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+neg   :   0 nop   :   0 or    :   2 ori   :   0 out   :  21 pop   :  12 
+push  :  12 rcall :  28 ret   :  42 reti  :   3 rjmp  :  34 rol   :   0 
+ror   :   0 sbc   :   0 sbci  :   0 sbi   :   7 sbic  :   0 sbis  :   0 
+sbiw  :   0 sbr   :   0 sbrc  :   5 sbrs  :   5 sec   :   0 seh   :   0 
+sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
+sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :  59 
+sub   :   0 subi  :   1 swap  :   0 tst   :   1 wdr   :   0 
+Instructions used: 36 out of 113 (31.9%)
+
+"ATmega328P" memory use summary [bytes]:
+Segment   Begin    End      Code   Data   Used    Size   Use%
+---------------------------------------------------------------
+[.cseg] 0x000000 0x000532   1224     10   1234   32768   3.8%
+[.dseg] 0x000100 0x00010e      0     14     14    2048   0.7%
+[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
+
+Assembly complete, 0 errors, 0 warnings
