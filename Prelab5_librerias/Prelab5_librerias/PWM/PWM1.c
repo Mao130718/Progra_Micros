@@ -87,8 +87,11 @@ void updateDutyCycle1B(uint16_t ciclo)
 }
 void servoAngulo(uint8_t angulo)
 {
-	if (angulo > 180U) angulo = 180U;
+	if (angulo > 180U) 
+	{
+		angulo = 180U;
+	}
 	
-	uint16_t ticks = (uint16_t)(servo_min + ((uint32_t)angulo * (servo_max - servo_min)) / 180UL); 
+	uint16_t ticks = servo_min + (uint32_t)(servo_max - servo_min) * angulo /180U;
 	OCR1A = ticks;
 }
